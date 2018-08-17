@@ -20,9 +20,9 @@
 
 
 
-    <div class="div-c" >
-        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c">
-        <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
+    <div class="div-c">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill">
+            <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,16 +47,35 @@
                         <a href="{{ route('register') }}" class="mr-1">Register</a>
                         <img src="../../Images/register.png" alt="error" class="nav-img-2">
                     </li>
-                    @endauth 
-                    @endif
+                    @endauth @endif
 
 
                 </ul>
             </div>
 
         </nav>
-    </div>
+   
 
+
+
+    <section class="hero-section">
+        <div class="row ">
+            <div class="col-md-12 d-flex justify-content-center ">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="CityName" aria-describedby="CityHelp" placeholder="Enter the city name">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" id="TextName" placeholder="Enter the state name">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+</section>
+</div>
 
 </body>
 

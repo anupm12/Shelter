@@ -10507,6 +10507,7 @@ body {
 
 .div-c {
   margin: 3.5rem 9rem 3.5rem 9rem;
+  background: #fff;
 }
 
 .logo {
@@ -10535,6 +10536,11 @@ body {
 
 .nav-c a {
   color: inherit;
-  text-decoration: none !important;
+  text-decoration: none;
+}
+
+.hero-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
