@@ -1,97 +1,61 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " />
-        <script src="main.js"></script>
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " />
+    <script src="main.js"></script>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
+    <title>Laravel</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
 
-            .full-height {
-                height: 100vh;
-            }
+</head>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+<body>
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+    <div class="div-c" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c">
+        <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+                    @if (Route::has('login'))
+                    <li class="nav-item mx-5">
+                        <a href="{{ url('/') }}" class="mx-5">Home</a>
+                    </li>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                    <li class="nav-item mx-5">
+                        <a href="{{ url('/home') }}" class="mx-5">Home</a>
+                    </li>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+                    <li class="nav-item mx-5">
+                        <a href="{{ route('login') }}" class="mr-1">Login</a>
+                        <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a href="{{ route('register') }}" class="mr-1">Register</a>
+                        <img src="../../Images/register.png" alt="error" class="nav-img-2">
+                    </li>
+                    @endauth 
+                    @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                </ul>
             </div>
-        </div>
-    </body>
+
+        </nav>
+    </div>
+</body>
+
 </html>
