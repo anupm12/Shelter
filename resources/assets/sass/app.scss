@@ -34,7 +34,7 @@ body {
 .logo {
     height: 55px;
     width: 150px;
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
 .nav-img-1 {
@@ -167,4 +167,26 @@ body {
 }
 
 
+
+//   SEARCH
+.form-control-lg {
+  height: calc(2.6875rem + 10px);
+  font-size: 1.5rem;
+}
+
+.btn-c {
+  font-size: 1.7rem;
+  background-color: $primary-color1 !important;
+  padding: 0.4rem 2.2rem;
+  border: 0px !important;
+  border-radius: 2rem !important;
+}
+
+.btn-c:hover {
+  color: #fff;
+  background-color: $text-color !important;
+  border-color: $primary-color1 !important;
+  transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
+
+}
 

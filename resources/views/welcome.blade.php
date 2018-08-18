@@ -33,7 +33,7 @@
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content ">
         <a href="#" class="navbar-brand">
             <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
         </a>
@@ -46,7 +46,7 @@
                 <span></span>
             </button>
         </div>
-        
+
         <script>
             var animation = 'rubberBand';
             $('.icon').on('click', function () {
@@ -59,6 +59,7 @@
                         $(this).removeClass('animated ' + animation);
                     });
             });
+
         </script>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -88,9 +89,27 @@
 
     <!-- FORM -->
 
-    <div class="container">
-        
-    </div>
+    <section class=" container search py-5 my-5">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <div class="form-group pb-1">                       
+                        <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group pb-1 ">                       
+                        <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+
+            </div>          
+        </div>
+    </section>
 
 
 
