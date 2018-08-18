@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -33,7 +33,7 @@
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content fixed-top" id="nav-2" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content fixed-top">
         <a href="#" class="navbar-brand">
             <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
         </a>
@@ -46,6 +46,7 @@
                 <span></span>
             </button>
         </div>
+        
         <script>
             var animation = 'rubberBand';
             $('.icon').on('click', function () {
@@ -58,8 +59,8 @@
                         $(this).removeClass('animated ' + animation);
                     });
             });
-
         </script>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 @if (Route::has('login'))
