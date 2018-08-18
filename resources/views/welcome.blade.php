@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " />
 
 
-    <title>Laravel</title>
+    <title>Shelter</title>
 
 
     <!-- Fonts -->
@@ -33,7 +33,7 @@
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content fixed-top" id="nav-2" >
         <a href="#" class="navbar-brand">
             <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
         </a>
@@ -64,19 +64,19 @@
             <ul class="navbar-nav ml-auto">
                 @if (Route::has('login'))
                 <li class="nav-item mx-5">
-                    <a href="{{ url('/') }}" class="mr-5">Home</a>
+                    <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
                 </li>
                 @auth
                 <li class="nav-item mx-5">
-                    <a href="{{ url('/home') }}" class="mr-5">Home</a>
+                    <a href="{{ url('/home') }}" class="mr-5 link-2">Home</a>
                 </li>
                 @else
                 <li class="nav-item mx-5">
-                    <a href="{{ route('login') }}" class="mr-1">Login</a>
+                    <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
                     <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
                 </li>
                 <li class="nav-item mx-5">
-                    <a href="{{ route('register') }}" class="mr-1">Register</a>
+                    <a href="{{ route('register') }}" class="mr-1 link-2">Register</a>
                     <img src="../../Images/register.png" alt="error" class="nav-img-2">
                 </li>
                 @endauth @endif
@@ -88,15 +88,7 @@
     <!-- FORM -->
 
     <div class="container">
-        <form>
-            <div class="form-group">
-                <input type="text" class="form-control" id="CityName" aria-describedby="CityHelp" placeholder="Enter the city name">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="TextName" placeholder="Enter the state name">
-            </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
+        
     </div>
 
 

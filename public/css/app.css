@@ -10580,11 +10580,18 @@ body {
   transition: all 300ms ease-in-out;
 }
 
-.element {
-  border-bottom: 1px solid #555;
-  margin-bottom: 5px;
-  /* space to next menu item */
-  padding-bottom: 5px;
-  /* space between text and border bottom */
+.link-2 {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #EB3B5A;
+  text-decoration: none;
+  border-left: 2px dotted transparent;
+  padding: 30px 8px 0 10px;
+  margin: 0 10px;
+}
+
+.link-2:hover {
+  border-left: 2px dotted #EB3B5A;
+  padding-bottom: 24px;
 }
 
