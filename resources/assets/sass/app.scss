@@ -1,76 +1,161 @@
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-
+// * {
+//   padding: 0;
+//   margin: 0;
+// }
+// *,
+// *::before,
+// *::after {
+//   box-sizing: inherit;
+// }
 html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+    box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: $primary-color2;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#393e46+0,0b0c0e+100 */
-background: #393e46; /* Old browsers */
-background: -moz-linear-gradient(45deg, #393e46 0%, #0b0c0e 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #393e46 0%,#0b0c0e 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #393e46 0%,#0b0c0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#393e46', endColorstr='#0b0c0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $text-color; //   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#393e46+0,0b0c0e+100 */
+    // background: #393e46; /* Old browsers */
+    // background: -moz-linear-gradient(45deg, #393e46 0%, #0b0c0e 100%); /* FF3.6-15 */
+    // background: -webkit-linear-gradient(45deg, #393e46 0%,#0b0c0e 100%); /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(45deg, #393e46 0%,#0b0c0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#393e46', endColorstr='#0b0c0e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.div-c {
-  margin: 3.5rem 9rem 3.5rem 9rem;
-  background: #fff;
-}
+//  NAVBAR 
 .logo {
-  height: 55px;
-  width: 150px;
-  margin-left: 25px;
+    height: 55px;
+    width: 150px;
+    margin-left: 25px;
 }
 
 .nav-img-1 {
-  height: 20px;
-  width: 30px;
+    height: 20px;
+    width: 30px;
 }
 
 .nav-img-2 {
-  height: 20px;
-  width: 23px;
+    height: 20px;
+    width: 23px;
 }
+
 .nav-c {
-  background: #fff !important;
-  font-size: 1.5rem !important;
-  font-family: Lato;
-  font-weight: 700;
-  text-transform: uppercase;
-  a {
-     color: inherit;
-     text-decoration: none ;
-  }
+    background: #fff !important;
+    font-size: 1.5rem !important;
+    font-family: Lato;
+    font-weight: 700;
+    text-transform: uppercase;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
+// .btn {
+//   background-color: #ffd200;
+//   color: #00174f;
+//   display: inline-block;
+//   text-decoration: none;
+//   padding: 13px 30px;
+//   margin: 30px 0 0 0;
+//   border-radius: 3px;
+//   font-weight: bold;
+//   }
+// .btn:hover {
+// background-color: #fff;
+// }
+// .btn--transition {
+// -webkit-transition: -webkit-transform 0.2s;
+// -webkit-transition: all 200ms ease-in-out;
+// transition: all 200ms ease-in-out;
+// }
+:focus {
+    outline: none;
+}
 
-.hero-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+// .icons {
+// margin: 50px 0;
+// }
+// .icon {
+// margin: 0 30px 0 0;
+// }
+.icon {
+    background-color: #fff;
+    border: 0;
+    height: 49px;
+    width: 39px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: $primary-color1;
+    border-radius: 2px;
+    position: absolute;
+    left: 10px;
+    -webkit-transition: -webkit-transform 0.3s;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.icon span:first-child {
+    top: 28px;
+}
+
+.icon span:nth-child(2) {
+    top: 37px;
+}
+
+.icon span:last-child {
+    top: 26px;
+}
+
+.icon--active span:first-child {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 37px;
+}
+
+.icon--active span:last-child {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 37px;
+}
+
+.icon--active span:nth-child(2) {
+    opacity: 0;
+}
+
+.icon--button {
+    border-radius: 10px;
+}
+
+.icon-transition {
+    -webkit-transition: -webkit-transform 0.3s;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.element {
+    border-bottom: 1px solid #555;
+    margin-bottom: 5px;
+    /* space to next menu item */
+    padding-bottom: 5px;
+    /* space between text and border bottom */
 }

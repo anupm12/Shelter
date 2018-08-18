@@ -10471,18 +10471,6 @@ a.text-dark:focus {
   }
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -10493,21 +10481,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
-  color: #393E46;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#393e46+0,0b0c0e+100 */
-  background: #393e46;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #393e46 0%, #0b0c0e 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#393e46', endColorstr='#0b0c0e',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
-}
-
-.div-c {
-  margin: 3.5rem 9rem 3.5rem 9rem;
-  background: #fff;
+  color: #232931;
 }
 
 .logo {
@@ -10539,8 +10513,78 @@ body {
   text-decoration: none;
 }
 
-.hero-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+:focus {
+  outline: none;
+}
+
+.icon {
+  background-color: #fff;
+  border: 0;
+  height: 49px;
+  width: 39px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon span {
+  display: block;
+  height: 2px;
+  width: 20px;
+  background-color: #EB3B5A;
+  border-radius: 2px;
+  position: absolute;
+  left: 10px;
+  -webkit-transition: -webkit-transform 0.3s;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.icon span:first-child {
+  top: 28px;
+}
+
+.icon span:nth-child(2) {
+  top: 37px;
+}
+
+.icon span:last-child {
+  top: 26px;
+}
+
+.icon--active span:first-child {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 37px;
+}
+
+.icon--active span:last-child {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 37px;
+}
+
+.icon--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.icon--button {
+  border-radius: 10px;
+}
+
+.icon-transition {
+  -webkit-transition: -webkit-transform 0.3s;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.element {
+  border-bottom: 1px solid #555;
+  margin-bottom: 5px;
+  /* space to next menu item */
+  padding-bottom: 5px;
+  /* space between text and border bottom */
 }
 
