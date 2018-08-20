@@ -96,10 +96,10 @@
             </div>
             <div class="col-md-4">
                 <form>
-                    <div class="form-group pb-1">                       
+                    <div class="form-group pb-1">
                         <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
-                    <div class="form-group pb-1 ">                       
+                    <div class="form-group pb-1 ">
                         <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Submit</button>
@@ -107,7 +107,7 @@
             </div>
             <div class="col-md-4">
 
-            </div>          
+            </div>
         </div>
     </section>
 

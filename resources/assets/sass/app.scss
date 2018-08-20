@@ -168,10 +168,11 @@ body {
 
 
 
+
 //   SEARCH
 .form-control-lg {
-  height: calc(2.6875rem + 10px);
-  font-size: 1.5rem;
+  height: calc(2.6875rem + 10px) !important;
+  font-size: 1.5rem !important;
 }
 
 .btn-c {
