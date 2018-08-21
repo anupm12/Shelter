@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/owner', function () {
     return view('owner.owner');
 });
+
+Route::post('/owner/store', [
+    'uses'=>'OwnersController@store',
+    'as'=>'owner.store'
+]);
