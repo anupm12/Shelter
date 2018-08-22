@@ -19,9 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/owner', function () {
-    return view('owner.owner');
-});
+Route::get('/owner', [
+    'uses' => 'OwnersController@index',
+    'as' => 'owner'
+]);
 
 Route::post('/owner/store', [
     'uses'=>'OwnersController@store',

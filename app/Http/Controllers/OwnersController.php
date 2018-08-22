@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use File;
+use App\Owner;
+
 
 class OwnersController extends Controller
 {
@@ -13,7 +17,7 @@ class OwnersController extends Controller
      */
     public function index()
     {
-        //
+        return view('owner.owner');
     }
 
     /**
@@ -33,17 +37,19 @@ class OwnersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request,[
-            'image1' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
-            'image2' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
-            'image3' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
-            'firstname' => 'required|max:30 |min:6',
-            'secondname' => 'required|max:30 |min:6',
+    { 
+        //  dd($request->all());
+
+         $this->validate($request, [
+            'image1' => 'mimes:jpeg,jpg,png,gif|max:10000',
+            'image2' => 'mimes:jpeg,jpg,png,gif|max:10000',
+            'image3' => 'mimes:jpeg,jpg,png,gif|max:10000',
+            'firstname' => 'required|max:30|min:2',
+            'lastname' => 'required|max:30|min:2',
             'address1' => 'required|max:225',
             'address2' => 'required|max:225',
             'area' => 'required|max:20',
-            'city' => 'required|max:30',
+            'city' => 'max:30',
             'state' => 'required|max:225',
             'zip' => 'max:10',
             'propertyname' => 'required|max:225|min:10',
@@ -52,9 +58,8 @@ class OwnersController extends Controller
             'type' => 'required|max:225',
             'for' => 'required|max:225',
             'description' => 'max:225'
-            ]);
-
-
+          ]);
+           
             $image1 = $request->image1;
             $image1_new = time().$image1->getClientOriginalName();
             $image1->move('uploads/owner',$image1_new); //moving the file
@@ -68,7 +73,7 @@ class OwnersController extends Controller
             $image3->move('uploads/owner',$image3_new); //moving the file
     
             
-            $post = Post::create([
+            $owner = Owner::create([
                 'image1' => 'uploads/owner/ '.$image1_new,
                 'image2' => 'uploads/owner/ '.$image2_new,
                 'image3' => 'uploads/owner/ '.$image3_new,
@@ -85,10 +90,18 @@ class OwnersController extends Controller
                 'advance' => $request->advance,
                 'type' => $request->type,
                 'for' => $request->for,
-                'description' => $request->description,
-           
-         ]);
-    
+                'description' => $request->description
+              ]);
+
+
+            // $owner=new Owner;
+            // $owner ->  firstname = $request ->firstname; 
+            // $owner ->  lastname = $request ->lastname; 
+            // $owner -> save();
+
+
+        //  Session::flash('success','Details updated successfully');
+        // sreturn redirect()->route('welcome');
     }
 
     /**
