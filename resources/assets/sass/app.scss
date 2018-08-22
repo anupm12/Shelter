@@ -18,11 +18,13 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body {  
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
-    color: $text-color; //   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#393e46+0,0b0c0e+100 */
+    // background: linear-gradient(to bottom right, red, yellow !important);
+    color: $text-color; 
+    //   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#393e46+0,0b0c0e+100 */
     // background: #393e46; /* Old browsers */
     // background: -moz-linear-gradient(45deg, #393e46 0%, #0b0c0e 100%); /* FF3.6-15 */
     // background: -webkit-linear-gradient(45deg, #393e46 0%,#0b0c0e 100%); /* Chrome10-25,Safari5.1-6 */
@@ -53,8 +55,9 @@ body {
     font-family: Lato;
     font-weight: 700;
     text-transform: uppercase;
+    border-top: 3px solid rgb(235, 59, 90);
     a {
-        color: inherit;
+        color: $primary-color2;
         text-decoration: none;
     }
 }
@@ -176,11 +179,11 @@ body {
 }
 
 .btn-c {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   background-color: $primary-color1 !important;
   padding: 0.4rem 2.2rem;
   border: 0px !important;
-  border-radius: 2rem !important;
+  border-radius: 20px !important;
 }
 
 .btn-c:hover {
@@ -191,3 +194,33 @@ body {
 
 }
 
+
+
+
+// index page
+.card-c {
+    height: 10rem !important;
+    width: 20rem !important;
+}
+
+
+
+
+
+
+// owner form
+.form-c {
+    label {
+        color: $primary-color2;
+    }
+    input {
+        padding: 15px;
+        font-size: 1.3rem;
+        // border-color: #9fad94;
+        // opacity: 0.5;
+        // border-color: rgb(159,173,148,0.5);
+    }
+    select {
+        padding: 15px;
+    }
+}

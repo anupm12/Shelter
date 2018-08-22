@@ -10506,10 +10506,11 @@ body {
   font-family: Lato;
   font-weight: 700;
   text-transform: uppercase;
+  border-top: 3px solid #eb3b5a;
 }
 
 .nav-c a {
-  color: inherit;
+  color: #393E46;
   text-decoration: none;
 }
 
@@ -10531,7 +10532,7 @@ body {
   display: block;
   height: 2px;
   width: 20px;
-  background-color: #EB3B5A;
+  background-color: #eb3b5a;
   border-radius: 2px;
   position: absolute;
   left: 10px;
@@ -10583,7 +10584,7 @@ body {
 .link-2 {
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #EB3B5A;
+  color: #eb3b5a;
   text-decoration: none;
   border-left: 2px dotted transparent;
   padding: 30px 8px 0 10px;
@@ -10591,7 +10592,7 @@ body {
 }
 
 .link-2:hover {
-  border-left: 2px dotted #EB3B5A;
+  border-left: 2px dotted #eb3b5a;
   padding-bottom: 24px;
 }
 
@@ -10601,17 +10602,35 @@ body {
 }
 
 .btn-c {
-  font-size: 1.7rem;
-  background-color: #EB3B5A !important;
+  font-size: 1.5rem;
+  background-color: #eb3b5a !important;
   padding: 0.4rem 2.2rem;
   border: 0px !important;
-  border-radius: 2rem !important;
+  border-radius: 20px !important;
 }
 
 .btn-c:hover {
   color: #fff;
   background-color: #232931 !important;
-  border-color: #EB3B5A !important;
+  border-color: #eb3b5a !important;
   transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border-color 0.6s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
+}
+
+.card-c {
+  height: 10rem !important;
+  width: 20rem !important;
+}
+
+.form-c label {
+  color: #393E46;
+}
+
+.form-c input {
+  padding: 15px;
+  font-size: 1.3rem;
+}
+
+.form-c select {
+  padding: 15px;
 }
 

@@ -40,43 +40,71 @@ class OwnersController extends Controller
     { 
         //  dd($request->all());
 
+        
+
          $this->validate($request, [
-            'image1' => 'mimes:jpeg,jpg,png,gif|max:10000',
-            'image2' => 'mimes:jpeg,jpg,png,gif|max:10000',
-            'image3' => 'mimes:jpeg,jpg,png,gif|max:10000',
+             'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,jpg,png,gif|max:2048',
+            // 'image2' => 'mimes:jpeg,jpg,png,gif|max:10000',
+            // 'image3' => 'mimes:jpeg,jpg,png,gif|max:10000',
             'firstname' => 'required|max:30|min:2',
             'lastname' => 'required|max:30|min:2',
             'address1' => 'required|max:225',
             'address2' => 'required|max:225',
             'area' => 'required|max:20',
-            'city' => 'max:30',
+            'city' => 'required|max:30',
             'state' => 'required|max:225',
             'zip' => 'max:10',
             'propertyname' => 'required|max:225|min:10',
-            'rent' => 'required|max:225',
-            'advance' => 'required|max:225',
-            'type' => 'required|max:225',
-            'for' => 'required|max:225',
+            'rent' => 'required|max:5',
+            'advance' => 'required|max:5',
+            'type' => 'required|max:25',
+            'for' => 'required|max:25',
             'description' => 'max:225'
           ]);
            
-            $image1 = $request->image1;
-            $image1_new = time().$image1->getClientOriginalName();
-            $image1->move('uploads/owner',$image1_new); //moving the file
-            
-            $image2 = $request->image2;
-            $image2_new = time().$image2->getClientOriginalName();
-            $image2->move('uploads/owner',$image2_new); //moving the file
 
-            $image3 = $request->image3;
-            $image3_new = time().$image3->getClientOriginalName();
-            $image3->move('uploads/owner',$image3_new); //moving the file
+
+          if($request->hasfile('filename'))
+          {
+ 
+             foreach($request->file('filename') as $image)
+             {
+                 $name=$image->getClientOriginalName();
+                 $image->move('uploads/owner', $name);  
+                 $data[] = $name;  
+             }
+          }
+ 
+          $owner= new Owner();
+          $owner->filename=json_encode($data);
+          
+         
+         $owner->save();
+ 
+
+
+
+
+            // $image1 = $request->image1;
+            // $image1_new = time().$image1->getClientOriginalName();
+            // $image1->move('uploads/owner',$image1_new); //moving the file
+            
+            // $image2 = $request->image2;
+            // $image2_new = time().$image2->getClientOriginalName();
+            // $image2->move('uploads/owner',$image2_new); //moving the file
+
+        
+            // $image3 = $request->image3;
+            // $image3_new = time().$image3->getClientOriginalName();
+            // $image3->move('uploads/owner',$image3_new); //moving the file
     
             
             $owner = Owner::create([
-                'image1' => 'uploads/owner/ '.$image1_new,
-                'image2' => 'uploads/owner/ '.$image2_new,
-                'image3' => 'uploads/owner/ '.$image3_new,
+            //     'image1' => 'uploads/owner/'.$image1_new,
+            //     'image2' => 'uploads/owner/'.$image2_new,
+            //     'image3' => 'uploads/owner/'.$image3_new,
+                'images'=>  implode("|",$images),
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'address1' => $request->address1,

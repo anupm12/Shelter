@@ -28,3 +28,13 @@ Route::post('/owner/store', [
     'uses'=>'OwnersController@store',
     'as'=>'owner.store'
 ]);
+
+
+Route::get('/index', [
+    'uses' => 'DisplayController@index',
+    'as' => 'index'
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
