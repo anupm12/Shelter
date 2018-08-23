@@ -1,4 +1,8 @@
-<!doctype html>
+@extends('layouts.app') @section('content')
+
+
+
+<!-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -18,11 +22,11 @@
     <title>Shelter</title>
 
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
+     Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
 
 
-</head>
+</head> -->
 
 <body>
 
@@ -33,7 +37,7 @@
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content ">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content ">
         <a href="#" class="navbar-brand">
             <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
         </a>
@@ -65,16 +69,35 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 @if (Route::has('login'))
-                <li class="nav-item mx-5">
+                 <li class="nav-item mx-5">
                     <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
+                </li> -->
+                
+                <!-- @auth
+                <li class="nav-item mx-5">
+                    <a href="{{ url('admin/home') }}" class="mr-5 link-2">Home</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="{{ route('owner') }}">Become a owner</a>
                     </li>
-                @auth
-                <li class="nav-item mx-5">
-                    <a href="{{ url('/home') }}" class="mr-5 link-2">Home</a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                 @else
                 <li class="nav-item mx-5">
                     <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
@@ -87,7 +110,7 @@
                 @endauth @endif
             </ul>
         </div>
-    </nav>
+    </nav> --> 
 
 
     <!-- FORM -->
@@ -117,7 +140,7 @@
 
 
 
-</body>
+<!--  </body> -->
 
 
 
@@ -128,4 +151,9 @@
 
 
     
-</html>
+<!-- </html> -->
+
+
+
+
+@endsection
