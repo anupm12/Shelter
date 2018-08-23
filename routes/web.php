@@ -38,3 +38,9 @@ Route::get('/index', [
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/single/{id}', [
+    'uses' => 'DisplayController@single',
+    'as' => 'single'
+]);

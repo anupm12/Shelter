@@ -68,6 +68,9 @@
                 <li class="nav-item mx-5">
                     <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
                 </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="{{ route('owner') }}">Become a owner</a>
+                    </li>
                 @auth
                 <li class="nav-item mx-5">
                     <a href="{{ url('/home') }}" class="mr-5 link-2">Home</a>

@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <label for="">Select multiple images</label>
+                <!-- <label for="">Select multiple images</label>
                 <div class="form-group increment input-group control-group">
 
                     <input type="file" class="form-control" name="filename[]">
@@ -43,21 +43,23 @@
                                 <i class="glyphicon glyphicon-remove"></i> Remove</button>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="form-group">
+                </div> -->
+
+                
+                <div class="form-group">
                     <label for="image1">Add image</label>
-                    <input type="file" class="form-control form-control-lg" id="image1" name="image1">
+                    <input type="file" class="form-control" id="image1" name="image1">
                 </div>
 
                 <div class="form-group">
                     <label for="image2">Add image</label>
-                    <input type="file" class="form-control form-control-lg" id="image2" name="image2">
+                    <input type="file" class="form-control" id="image2" name="image2">
                 </div>
 
                 <div class="form-group">
                     <label for="image3">Add image</label>
-                    <input type="file" class="form-control form-control-lg" id="image3" name="image3">
-                </div> -->
+                    <input type="file" class="form-control" id="image3" name="image3">
+                </div>
 
                 <div class="form-group py-3">
                     <label for="inputAddress">Address line 1</label>
@@ -146,21 +148,8 @@
 </section>
 
 
-<script type="text/javascript">
-    $(document).ready(function () {
 
-        $(".btn-success").click(function () {
-            var html = $(".clone").html();
-            $(".increment").after(html);
-        });
 
-        $("body").on("click", ".btn-danger", function () {
-            $(this).parents(".control-group").remove();
-        });
-
-    });
-
-</script>
 
 
 

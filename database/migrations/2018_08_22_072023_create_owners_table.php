@@ -17,10 +17,10 @@ class CreateOwnersTable extends Migration
                 $table->increments('id');
                 $table->string('firstname');
                 $table->string('lastname');
-                $table->string('filename');
-                // $table->string('image1');
-                // $table->string('image2');
-                // $table->string('image3');
+                // $table->string('filename');
+                $table->string('image1');
+                $table->string('image2');
+                $table->string('image3');
                 $table->string('address1');
                 $table->string('address2');
                 $table->string('area');

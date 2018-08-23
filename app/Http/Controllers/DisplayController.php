@@ -12,4 +12,10 @@ class DisplayController extends Controller
     {
         return view('index')->with('owners' ,Owner ::all()) ;
     }
+
+    public function single($id)
+    {
+        return view('single')->with('single' ,Owner ::find($id)) ;
+    }
+
 }
