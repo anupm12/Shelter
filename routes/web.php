@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin','middleware' => 'web','middleware' => 'auth'],
     ]);
 
 
-    Route::get('/editadvertisement/update/{id}', [
+    Route::post('/editadvertisement/update/{id}', [
         'uses' => 'OwnersController@update',
         'as' => 'editadvertisement.update'
     ]);

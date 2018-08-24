@@ -170,18 +170,21 @@ class OwnersController extends Controller
             $image1 = $request->image1;
             $image1_new = time().$image1->getClientOriginalName();
             $image1->move('uploads/owner',$image1_new);
+            $owner->image1 = 'uploads/owner'.$image1_new;
         }
 
         if($request->hasfile('image2')){
         $image2 = $request->image2;
         $image2_new = time().$image2->getClientOriginalName();
         $image2->move('uploads/owner',$image2_new); //moving the file
+        $owner->image2 = 'uploads/owner'.$image2_new;
         }
 
         if($request->hasfile('image3')){
         $image3 = $request->image3;
         $image3_new = time().$image3->getClientOriginalName();
         $image3->move('uploads/owner',$image3_new); //moving the file
+        $owner->image3 = 'uploads/owner'.$image3_new;
         }
 
          $owner->firstname = $request->firstname;
@@ -200,7 +203,7 @@ class OwnersController extends Controller
          $owner->description = $request->description;
          $owner->save();
         Session::flash('success','Post Update Successfully ');
-         return redirect()->route('/');
+         return redirect()->route('welcome');
     }
 
     /**
