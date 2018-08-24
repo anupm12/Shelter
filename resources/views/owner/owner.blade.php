@@ -45,7 +45,7 @@
                     </div>
                 </div> -->
 
-                
+
                 <div class="form-group">
                     <label for="image1">Add image</label>
                     <input type="file" class="form-control" id="image1" name="image1">
