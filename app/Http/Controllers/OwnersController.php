@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use File;
-use App\Owner;
+use Auth;
+use App\User;
+use App\owner;
 
 
 class OwnersController extends Controller
@@ -17,6 +19,7 @@ class OwnersController extends Controller
      */
     public function index()
     {
+
         return view('owner.owner');
     }
 
@@ -37,10 +40,10 @@ class OwnersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
+    {
         //  dd($request->all());
 
-        
+
 
          $this->validate($request, [
             'image1' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
@@ -61,23 +64,25 @@ class OwnersController extends Controller
             'for' => 'required|max:25',
             'description' => 'max:225'
           ]);
-           
+
 
             $image1 = $request->image1;
             $image1_new = time().$image1->getClientOriginalName();
             $image1->move('uploads/owner',$image1_new); //moving the file
-            
+
             $image2 = $request->image2;
             $image2_new = time().$image2->getClientOriginalName();
             $image2->move('uploads/owner',$image2_new); //moving the file
 
-        
+
             $image3 = $request->image3;
             $image3_new = time().$image3->getClientOriginalName();
             $image3->move('uploads/owner',$image3_new); //moving the file
-    
-            
+
+            $user = Auth::user();
+
             $owner = Owner::create([
+                'user_id' => $user->id,
                 'image1' => 'uploads/owner/'.$image1_new,
                 'image2' => 'uploads/owner/'.$image2_new,
                 'image3' => 'uploads/owner/'.$image3_new,
@@ -94,8 +99,15 @@ class OwnersController extends Controller
                 'advance' => $request->advance,
                 'type' => $request->type,
                 'for' => $request->for,
-                'description' => $request->description
+                'description' => $request->description,
+                'isowner'=>true
               ]);
+
+              $id = $user->id;
+              $owner = Owner::find($id);
+              $user->isowner = $owner->isowner;
+              $user->save();
+
 
 
     }
@@ -148,7 +160,7 @@ class OwnersController extends Controller
             'for'=>'required',
             'description'=>'required'
         ]);
-        
+
          $owner = Owner::find($id);
 
          if($request->hasfile('image1')){
@@ -162,7 +174,7 @@ class OwnersController extends Controller
         $image2_new = time().$image2->getClientOriginalName();
         $image2->move('uploads/owner',$image2_new); //moving the file
         }
-    
+
         if($request->hasfile('image3')){
         $image3 = $request->image3;
         $image3_new = time().$image3->getClientOriginalName();

@@ -19,19 +19,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin','middleware' => 'web','middleware' => 'auth'], function() {
     Route::get('/owner', [
         'uses' => 'OwnersController@index',
         'as' => 'owner'
     ]);
-    
+
 
     Route::post('/owner/store', [
         'uses'=>'OwnersController@store',
         'as'=>'owner.store'
     ]);
-    
-    
+
+
     Route::get('/index', [
         'uses' => 'DisplayController@index',
         'as' => 'index'
@@ -55,12 +55,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
         'as' => 'editprofile.update'
     ]);
 
-    
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-    
+
 
 
 

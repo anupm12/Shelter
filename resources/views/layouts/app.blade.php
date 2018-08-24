@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " >
-    
-   
-   
+
+
+
     <!-- CSRF token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -59,7 +59,7 @@
 
 
             <div class="collapse navbar-collapse" id="navbarNav">
-               
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -67,7 +67,7 @@
                     <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
                 </li>
                     <!-- Authentication Links -->
-                    @guest 
+                    @guest
                     <li class="nav-item mx-5">
                     <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
                     <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
@@ -77,10 +77,16 @@
                     <img src="../../Images/register.png" alt="error" class="nav-img-2">
                 </li>
                     @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('owner') }}">Become a owner</a>
-                    </li>
-                     
+                    @if( !Auth::user()->isowner )
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('owner')}}">Become a owner</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('owner')}}">Add More</a>
+                        </li>
+                    @endif
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" v-pre>
@@ -104,7 +110,7 @@
                     </li>
                     @endguest
                 </ul>
-                
+
             </div>
     </div>
     </nav>
@@ -134,5 +140,5 @@
         crossorigin="anonymous"></script>
     <script src="main.js"></script> -->
 
-    
+
 </html>

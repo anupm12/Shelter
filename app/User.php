@@ -27,7 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function owner(){
-        return $this->hasone ('App\Owner');
+
+    public function owner()
+    {
+        return $this->hasOne('App\owner');
     }
 }
