@@ -93,8 +93,8 @@
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <a class="dropdown-item" href="#">
-                                {{ __('Edit profile') }}
+                            <a class="dropdown-item" href=" {{route('viewprofile',['id'=>Auth::user()->id]) }} ">
+                                {{ __('View profile') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

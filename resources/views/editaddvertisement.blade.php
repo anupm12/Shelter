@@ -10,7 +10,7 @@
 
         <div class="col-md-8">
 
-            <form action=" {{ route('editprofile.update',['id' => $owner -> id]) }} " method="post" enctype="multipart/form-data" class="form-c">
+            <form action=" {{ route('editadvertisement.update',['id' => $owner -> id]) }} " method="post" enctype="multipart/form-data" class="form-c">
                 {{ csrf_field() }}
 
                 <div class="form-row form-group">

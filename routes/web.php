@@ -44,23 +44,25 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     ]);
 
 
-    Route::get('/editprofile{id}', [
+    Route::get('/editadvertisement{id}', [
         'uses' => 'OwnersController@edit',
-        'as' => 'editprofile'
+        'as' => 'editadvertisement'
     ]);
 
 
-    Route::get('/editprofile/update{id}', [
+    Route::get('/editadvertisement/update{id}', [
         'uses' => 'OwnersController@update',
-        'as' => 'editprofile.update'
+        'as' => 'editadvertisement.update'
     ]);
 
     
+    Route::get('/viewprofile/{id}', [
+        'uses' => 'ViewprofileController@index',
+        'as' => 'viewprofile'
+    ]);
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
     
-
-
-
