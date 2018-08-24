@@ -80,6 +80,9 @@ class OwnersController extends Controller
             $image3_new = time().$image3->getClientOriginalName();
             $image3->move('uploads/owner',$image3_new); //moving the file
 
+            $city  = explode(',' ,$request->city);
+            $state = explode(',',$request->state);
+
             $user = Auth::user();
 
             $owner = Owner::create([
@@ -92,8 +95,8 @@ class OwnersController extends Controller
                 'address1' => $request->address1,
                 'address2' => $request->address2,
                 'area' => $request->area,
-                'city' => $request->city,
-                'state' => $request->state,
+                'city' => $city[0],
+                'state' => $state[0],
                 'zip' => $request->zip,
                 'propertyname' => $request->propertyname,
                 'rent' => $request->rent,
@@ -111,11 +114,8 @@ class OwnersController extends Controller
               $user->save();
 
 
-              Session::flash('success','Advertisement Added Successfully ');
-             return redirect()->route('welcome');
-
-            
-
+              Session::flash('success','Advertisement AddedSuccessfully ');
+              return redirect()->route('welcome');
 
     }
 
@@ -138,7 +138,7 @@ class OwnersController extends Controller
      */
     public function edit($id)
     {
-       
+
         return view('editadvertisement')->with('owner',Owner::find($id));
     }
 

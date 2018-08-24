@@ -14,6 +14,15 @@
         </div>
         <div class="col-md-2"></div>
     </div>
+    <div class="row">
+    <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2>Property details</h2>
+            
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    </div>
 </div>
 
 @endsection
