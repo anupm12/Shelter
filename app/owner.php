@@ -13,4 +13,9 @@ class Owner extends Model
     public function getFeaturedAttribute($image1,$image2,$image3){
         return asset($image1,$image2,$image3);
     }
+
+    public function User()
+    {
+       return $this->hasOne(User::class);
+    }
 }
