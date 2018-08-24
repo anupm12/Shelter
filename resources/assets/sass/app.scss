@@ -121,13 +121,14 @@ body {
   padding: 30px 8px 0 10px;
   margin: 0 10px;
 }
+
 .link-2:hover {
   border-left: 2px dotted $primary-color1;
   padding-bottom: 24px;
 }
 
 
-//   SEARCH
+//   SEARCH form-------->>>>>>welcome page
 .btn-c {
   background-color: $primary-color1 !important;
   border: 0px !important;
@@ -143,7 +144,7 @@ body {
 }
 
 
-// index page
+// index page-------->>>>>>>>SRP-Search Results Page
 .card-c {
     width :
     img {
@@ -171,7 +172,7 @@ card-text-c {
 }
 
 
-// owner form
+// owner form ----->>>UPLOAD ADVERTISEMENT
 .form-c {
     label {
         color: $primary-color2;
@@ -182,8 +183,7 @@ card-text-c {
 }
 
 
-
-//view profile
+//view profile-------->>>>>>>delete/edit advertisement
 .td-align {
     text-align: center;
 }

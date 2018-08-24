@@ -29,7 +29,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content">
             <a href="#" class="navbar-brand">
-                <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
+                <img src="{{ asset('Images/logo.png') }} " alt="Error" class="logo">
             </a>
             <div class="icons">
                 <button class="navbar-toggler icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"

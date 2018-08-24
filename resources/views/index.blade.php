@@ -7,7 +7,7 @@
         @foreach ($owners as $owner)
         <div class="col-md-4">
             <div class="card card-c">
-                <img class="card-img-top" src="{{ $owner -> image1 }}" alt="error">
+                <img class="card-img-top" src= "{{ $owner -> image1 }}"  alt="error">
                 <div class="card-body">
                     <h5 class="card-title">{{ $owner -> propertyname }}</h5>
                     <small class="card-text">{{ $owner -> address2 }}, </small>

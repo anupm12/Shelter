@@ -103,14 +103,18 @@ class OwnersController extends Controller
                 'description' => $request->description,
                 'isowner'=>true
               ]);
-              Session::flash('success','Advertisement AddedSuccessfully ');
-             return redirect()->route('welcome');
+
 
               $id = $user->id;
               $owner = Owner::find($id);
               $user->isowner = $owner->isowner;
               $user->save();
 
+
+              Session::flash('success','Advertisement Added Successfully ');
+             return redirect()->route('welcome');
+
+            
 
 
     }
@@ -202,7 +206,7 @@ class OwnersController extends Controller
          $owner->for = $request->for;
          $owner->description = $request->description;
          $owner->save();
-        Session::flash('success','Post Update Successfully ');
+        Session::flash('success','Advertisement Updated');
          return redirect()->route('welcome');
     }
 
