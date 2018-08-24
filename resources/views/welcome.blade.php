@@ -72,7 +72,7 @@
                  <li class="nav-item mx-5">
                     <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
                 </li> -->
-                
+
                 <!-- @auth
                 <li class="nav-item mx-5">
                     <a href="{{ url('admin/home') }}" class="mr-5 link-2">Home</a>
@@ -110,7 +110,7 @@
                 @endauth @endif
             </ul>
         </div>
-    </nav> --> 
+    </nav> -->
 
 
     <!-- FORM -->
@@ -121,14 +121,14 @@
 
             </div>
             <div class="col-md-4">
-                <form>
+                <form action="{{ route('results') }}" method="GET">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter city">
+                        <input name="query" type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter city">
                     </div>
                     <div class="form-row form-group">
                     <div class="col">
                         <select name="type" id="type" class="form-control from-control-lg">
-                            <option value="" disabled selected hidden>Select type</option>
+
                             <option value="pg">PG</option>
                             <option value="home">Home</option>
                         </select>
@@ -136,7 +136,7 @@
 
                     <div class="col">
                         <select name="for" id="forgender" class="form-control from-control-lg">
-                            <option value="" disabled selected hidden>For gender</option>
+
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="both">Both</option>
@@ -161,13 +161,13 @@
 
 
 
-   
-    
 
 
 
 
-    
+
+
+
 <!-- </html> -->
 
 

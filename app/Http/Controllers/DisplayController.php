@@ -23,4 +23,18 @@ class DisplayController extends Controller
         return view('single')->with('single' ,Owner ::find($id)) ;
     }
 
+    public function results(){
+
+        $type = request('type');
+        $for  = request('for');
+
+        $owners = Owner::where('city','like','%'.request('query').'%')
+                         ->Where('type','like','%'.$type.'%')
+                         ->Where('for','like','%'.$for.'%')->get();
+
+
+        return view('results')->with('owners',$owners);
+
+    }
+
 }
