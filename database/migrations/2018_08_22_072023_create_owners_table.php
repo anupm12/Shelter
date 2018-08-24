@@ -14,6 +14,8 @@ class CreateOwnersTable extends Migration
     public function up()
     {
         Schema::create('owners', function (Blueprint $table) {
+
+                $table->foreign('id')->references('id')->on('users');
                 $table->increments('id');
                 $table->string('firstname');
                 $table->string('lastname');
@@ -35,6 +37,9 @@ class CreateOwnersTable extends Migration
                 $table->string('description');
                 $table->timestamps();
         });
+
+
+
     }
 
     /**

@@ -43,8 +43,6 @@ class OwnersController extends Controller
         
 
          $this->validate($request, [
-            //  'filename' => 'required',
-            // 'filename.*' => 'image|mimes:jpeg,jpg,png,gif|max:2048',
             'image1' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'image2' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
             'image3' => 'required|mimes:jpeg,jpg,png,gif|max:10000',
@@ -65,28 +63,6 @@ class OwnersController extends Controller
           ]);
            
 
-
-        //   if($request->hasfile('filename'))
-        //   {
- 
-        //      foreach($request->file('filename') as $image)
-        //      {
-        //          $name=time().$image->getClientOriginalName();
-        //          $image->move('uploads/owner', $name);  
-        //          $data[] = $name;  
-        //      }
-        //   }
- 
-        //   $owner= new Owner();
-        //   $owner->filename=json_encode($data);
-          
-         
-        //  $owner->save();
- 
-
-
-
-
             $image1 = $request->image1;
             $image1_new = time().$image1->getClientOriginalName();
             $image1->move('uploads/owner',$image1_new); //moving the file
@@ -104,7 +80,7 @@ class OwnersController extends Controller
             $owner = Owner::create([
                 'image1' => 'uploads/owner/'.$image1_new,
                 'image2' => 'uploads/owner/'.$image2_new,
-               'image3' => 'uploads/owner/'.$image3_new,
+                'image3' => 'uploads/owner/'.$image3_new,
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
                 'address1' => $request->address1,
@@ -122,14 +98,6 @@ class OwnersController extends Controller
               ]);
 
 
-            // $owner=new Owner;
-            // $owner ->  firstname = $request ->firstname; 
-            // $owner ->  lastname = $request ->lastname; 
-            // $owner -> save();
-
-
-        //  Session::flash('success','Details updated successfully');
-        // sreturn redirect()->route('welcome');
     }
 
     /**
@@ -151,7 +119,8 @@ class OwnersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $owner = Owner::find($id);
+        return view('editprofile')->with('firstname',$firstname)->with('lastname',$lastname)->with('address1',$address1)->with('address2',$address2)->with('area',$area)->with('city',$city)->with('state',$state)->with('zip',$zip)->with('propertyname',$propertyname)->with('rent',$rent)->with('advance',$advance)->with('type',$type)->with('for',$for)->with('description',$description);
     }
 
     /**
@@ -163,7 +132,60 @@ class OwnersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'firstname'=>'required|max:255',
+            'lastname'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'area'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'zip'=>'required',
+            'propertyname'=>'required',
+            'rent'=>'required',
+            'advance'=>'required',
+            'type'=>'required',
+            'for'=>'required',
+            'description'=>'required'
+        ]);
+        
+         $owner = Owner::find($id);
+
+         if($request->hasfile('image1')){
+            $image1 = $request->image1;
+            $image1_new = time().$image1->getClientOriginalName();
+            $image1->move('uploads/owner',$image1_new);
+        }
+
+        if($request->hasfile('image2')){
+        $image2 = $request->image2;
+        $image2_new = time().$image2->getClientOriginalName();
+        $image2->move('uploads/owner',$image2_new); //moving the file
+        }
+    
+        if($request->hasfile('image3')){
+        $image3 = $request->image3;
+        $image3_new = time().$image3->getClientOriginalName();
+        $image3->move('uploads/owner',$image3_new); //moving the file
+        }
+
+         $owner->firstname = $request->firstname;
+         $owner->lastname = $request->lastname;
+         $owner->address1 = $request->address1;
+         $owner->address2 = $request->address2;
+         $owner->area = $request->area;
+         $owner->city = $request->city;
+         $owner->state = $request->state;
+         $owner->zip = $request->zip;
+         $owner->propertyname = $request->propertyname;
+         $owner->rent = $request->rent;
+         $owner->advance = $request->advance;
+         $owner->type = $request->type;
+         $owner->for = $request->for;
+         $owner->description = $request->description;
+         $owner->save();
+        Session::flash('success','Post Update Successfully ');
+         return redirect()->route('/');
     }
 
     /**

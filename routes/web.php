@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,20 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
         'uses' => 'DisplayController@single',
         'as' => 'single'
     ]);
+
+
+    Route::get('/editprofile{id}', [
+        'uses' => 'OwnersController@edit',
+        'as' => 'editprofile'
+    ]);
+
+
+    Route::get('/editprofile/update{id}', [
+        'uses' => 'OwnersController@update',
+        'as' => 'editprofile.update'
+    ]);
+
+    
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
