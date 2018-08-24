@@ -13,25 +13,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',  [
+    'uses' => 'DisplayController@welcome',
+    'as' => 'welcome'
+]);
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin','middleware' => 'web','middleware' => 'auth'], function() {
+    
+    
+
     Route::get('/owner', [
         'uses' => 'OwnersController@index',
         'as' => 'owner'
     ]);
-    
+
 
     Route::post('/owner/store', [
         'uses'=>'OwnersController@store',
         'as'=>'owner.store'
     ]);
-    
-    
+
+
     Route::get('/index', [
         'uses' => 'DisplayController@index',
         'as' => 'index'
@@ -44,25 +49,32 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     ]);
 
 
-    Route::get('/editadvertisement{id}', [
+    Route::get('/editadvertisement/{id}', [
         'uses' => 'OwnersController@edit',
         'as' => 'editadvertisement'
     ]);
 
 
-    Route::get('/editadvertisement/update{id}', [
+    Route::get('/editadvertisement/update/{id}', [
         'uses' => 'OwnersController@update',
         'as' => 'editadvertisement.update'
     ]);
 
-    
-    Route::get('/viewprofile/{id}', [
+    Route::get('/viewprofile{id}', [
         'uses' => 'ViewprofileController@index',
         'as' => 'viewprofile'
+    ]);
+
+    Route::get('owner/delete/{id}',[
+        'uses' => 'OwnersController@destroy',
+        'as'   => 'owner.delete'
     ]);
 
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-    
+
+
+
+

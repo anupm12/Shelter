@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 
-<section class="container py-5 my-5">
+<section class="container ">
     <div class="row">
 
 
@@ -9,8 +9,9 @@
 
 
         <div class="col-md-8">
+            <h2 class="pb-4">Edit advertisement</h2>
 
-            <form action=" {{ route('editadvertisement.update',['id' => $owner -> id]) }} " method="post" enctype="multipart/form-data" class="form-c">
+            <form action=" {{ route('editadvertisement.update',['id'=>$owner->id]) }} " method="post" enctype="multipart/form-data" class="form-c">
                 {{ csrf_field() }}
 
                 <div class="form-row form-group">
@@ -42,12 +43,14 @@
 
                 <div class="form-group py-3">
                     <label for="inputAddress">Address line 1</label>
-                    <input value="{{ $owner->address1 }}" name="address1" type="text" class="form-control from-control-lg" id="inputAddress" placeholder="1234 Main St">
+                    <input value="{{ $owner->address1 }}" name="address1" type="text" class="form-control from-control-lg" id="inputAddress"
+                        placeholder="1234 Main St">
                 </div>
 
                 <div class="form-group">
                     <label for="inputAddress2">Address line 2</label>
-                    <input value="{{ $owner->address2 }}" name="address2" type="text" class="form-control from-control-lg" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <input value="{{ $owner->address2 }}" name="address2" type="text" class="form-control from-control-lg" id="inputAddress2"
+                        placeholder="Apartment, studio, or floor">
                 </div>
 
                 <div class="form-group">
@@ -74,7 +77,8 @@
 
                 <div class="form-group">
                     <label for="propertyname">Property name</label>
-                    <input value="{{ $owner->propertyname }}" name="propertyname" type="text" class="form-control from-control-lg" id="propertyname" placeholder="Enter property name">
+                    <input value="{{ $owner->propertyname }}" name="propertyname" type="text" class="form-control from-control-lg" id="propertyname"
+                        placeholder="Enter property name">
                 </div>
 
                 <div class="form-group">
@@ -84,7 +88,7 @@
 
                 <div class="form-group">
                     <label for="advance">Advance amount</label>
-                    <input value="{{ $owner->adance }}" name="advance" type="text" class="form-control from-control-lg" id="advance" placeholder="Only in numbers">
+                    <input value="{{ $owner->advance }}" name="advance" type="text" class="form-control from-control-lg" id="advance" placeholder="Only in numbers">
                 </div>
 
                 <div class="form-row form-group">
@@ -92,8 +96,8 @@
                         <label for="type">Property type</label>
                         <select name="type" id="type" class="form-control from-control-lg" placeholder="Select property type">
                             <option value="" disabled selected hidden>Please Choose</option>
-                            <option value="{{ $owner->pg }}">PG</option>
-                            <option value="{{ $owner->home }}">Home</option>
+                            <option value=pg>PG</option>
+                            <option value=home>Home</option>
                         </select>
                     </div>
 
@@ -101,17 +105,17 @@
                         <label for="forgender">Property for</label>
                         <select name="for" id="forgender" class="form-control from-control-lg">
                             <option value="" disabled selected hidden>Please Choose</option>
-                            <option value="{{ $owner->male }}">Male</option>
-                            <option value="{{ $owner->female }}">Female</option>
-                            <option value="{{ $owner->both }}">Both</option>
-                            <option value="{{ $owner->others }}">Others</option>
+                            <option value=male>Male</option>
+                            <option value=female>Female</option>
+                            <option value=both>Both</option>
+                            <option value=others>Others</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="Textarea">Add description</label>
-                    <textarea value="{{ $owner->description }}"name="description" class="form-control" id="Textarea" rows="7"></textarea>
+                    <textarea value="{{ $owner->description }}" name="description" class="form-control" id="Textarea" rows="7"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Update profile</button>

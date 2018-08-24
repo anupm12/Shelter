@@ -10,7 +10,7 @@ class ViewprofileController extends Controller
 {
     public function index($id)
     {
-        return view('viewprofile')->with('profile',User::find($id))->with('owners',Owner::find($id));
+        return view('viewprofile')->with('profile',User::find($id))->with('owners',Owner::where('user_id',$id)->get());
     }
 
     // public function viewadd($id)

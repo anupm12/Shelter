@@ -8,6 +8,11 @@ use App\Owner;
 
 class DisplayController extends Controller
 {
+
+    public function welcome(){
+        return view('welcome');
+    }
+
     public function index()
     {
         return view('index')->with('owners' ,Owner ::all()) ;

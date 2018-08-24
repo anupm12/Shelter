@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " >
-    
-   
-   
+    <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} ">
+
+
+
     <!-- CSRF token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -59,28 +59,33 @@
 
 
             <div class="collapse navbar-collapse" id="navbarNav">
-               
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-5">
-                    <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
-                </li>
-                    <!-- Authentication Links -->
-                    @guest 
                     <li class="nav-item mx-5">
-                    <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
-                    <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
-                </li>
-                <li class="nav-item mx-5">
-                    <a href="{{ route('register') }}" class="mr-1 link-2">Register</a>
-                    <img src="../../Images/register.png" alt="error" class="nav-img-2">
-                </li>
+                        <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
+                    </li>
+                    <!-- Authentication Links -->
+                    @guest
+                    <li class="nav-item mx-5">
+                        <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
+                        <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a href="{{ route('register') }}" class="mr-1 link-2">Register</a>
+                        <img src="../../Images/register.png" alt="error" class="nav-img-2">
+                    </li>
+                    @else @if( !Auth::user()->isowner )
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('owner')}}">Become a owner</a>
+                    </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('owner') }}">Become a owner</a>
+                        <a class="nav-link" href="{{ route('owner')}}">Add More</a>
                     </li>
-                     
+                    @endif
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" v-pre>
@@ -89,13 +94,15 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href=" {{route('viewprofile',['id'=>Auth::user()->id]) }} ">
+                                {{ __('View profile') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <a class="dropdown-item" href=" {{route('viewprofile',['id'=>Auth::user()->id]) }} ">
-                                {{ __('View profile') }}
-                            </a>
+
+
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -104,19 +111,23 @@
                     </li>
                     @endguest
                 </ul>
-                
+
             </div>
     </div>
     </nav>
 
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{ Session::get('success') }}
+    </div>
     @endif
 
     <main class="py-4">
@@ -134,5 +145,5 @@
         crossorigin="anonymous"></script>
     <script src="main.js"></script> -->
 
-    
+
 </html>

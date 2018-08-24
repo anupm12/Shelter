@@ -123,12 +123,29 @@
             <div class="col-md-4">
                 <form>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter city">
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <div class="form-row form-group">
+                    <div class="col">
+                        <select name="type" id="type" class="form-control from-control-lg">
+                            <option value="" disabled selected hidden>Select type</option>
+                            <option value="pg">PG</option>
+                            <option value="home">Home</option>
+                        </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Submit</button>
+
+                    <div class="col">
+                        <select name="for" id="forgender" class="form-control from-control-lg">
+                            <option value="" disabled selected hidden>For gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="both">Both</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-c">Submit</button>
                 </form>
             </div>
             <div class="col-md-4">
