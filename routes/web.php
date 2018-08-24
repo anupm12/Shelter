@@ -19,11 +19,16 @@ Route::get('/',  [
     'as' => 'welcome'
 ]);
 
+Route::get('/results',[
+    'uses' => 'DisplayController@results',
+    'as' => 'results'
+]);
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin','middleware' => 'web','middleware' => 'auth'], function() {
-    
-    
+
+
 
     Route::get('/owner', [
         'uses' => 'OwnersController@index',
