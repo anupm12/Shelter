@@ -8,9 +8,9 @@
         </div>
 
         <div class="col-md-8">
-            <h2>User details</h2>
-            <p>User name: {{ $profile -> name }} </p>
-            <p>Email: {{ $profile -> email }} </p>
+            <h3>User details</h3>
+            <p class="pl-4">User name: {{ $profile -> name }} </p>
+            <p class="pl-4">Email: {{ $profile -> email }} </p>
         </div>
 
         <div class="col-md-2">
@@ -37,8 +37,8 @@
                         <td>{{ $owner -> propertyname }}</td>
                         <td>{{ $owner -> area }}</td>
                         <td>
-                        <span href=" {{ route('editadvertisement',['id'=>$owner->id]) }} " class="badge badge-light badge-c">Edit</span>
-                        <span href=" {{ route('owner.delete',['id'=>$owner->id]) }} " class="badge badge-light badge-c">Delete</span>
+                        <a href=" {{ route('editadvertisement',['id'=>$owner->id]) }} " class="badge badge-c badge-light p-1">Edit</a>
+                        <a href=" {{ route('owner.delete',['id'=>$owner->id]) }} " class="badge badge-c badge-light p-1">Delete</a>
                         </td>
                     </tr>
                     @endforeach @endif
