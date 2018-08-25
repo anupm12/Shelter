@@ -10493,16 +10493,41 @@ body {
   width: 23px;
 }
 
+#nav {
+  -webkit-animation: mymove 5s infinite;
+  /* Safari 4.0 - 8.0 */
+  animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes mymove {
+  50% {
+    -webkit-box-shadow: 10px 0.2px 10px #9ba5b4;
+            box-shadow: 10px 0.2px 10px #9ba5b4;
+  }
+}
+
+@keyframes mymove {
+  50% {
+    -webkit-box-shadow: 10px 0.2px 10px #9ba5b4;
+            box-shadow: 10px 0.2px 10px #9ba5b4;
+  }
+}
+
 .nav-c {
   background: #fff !important;
   font-family: Lato;
   font-weight: 700;
   text-transform: uppercase;
-  border-top: 3px solid #eb3b5a;
+  -webkit-box-shadow: a;
+          box-shadow: a;
+  box-shadow-color: #393E46 !important;
+  box-shadow-text-decoration: none;
 }
 
-.nav-c a {
-  color: #393E46;
+.nav-c ul a {
+  color: #393E46 !important;
   text-decoration: none;
 }
 
@@ -10574,18 +10599,19 @@ body {
 }
 
 .link-2 {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
   color: #eb3b5a;
   text-decoration: none;
   border-left: 2px dotted transparent;
-  padding: 30px 8px 0 10px;
-  margin: 0 10px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .link-2:hover {
   border-left: 2px dotted #eb3b5a;
-  padding-bottom: 24px;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .btn-c {
@@ -10597,7 +10623,6 @@ body {
 .btn-c:hover {
   color: #fff;
   background-color: #232931 !important;
-  border-color: #eb3b5a !important;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
 }
 
@@ -10629,7 +10654,31 @@ card-text-c {
   padding-bottom: 5px;
 }
 
-.td-align {
+.table-c td,
+.table-c th {
   text-align: center;
+}
+
+badge-c {
+  background-color: #eb3b5a !important;
+  border: 0px !important;
+  border-radius: 20px !important;
+}
+
+badge-c:hover {
+  color: #fff;
+  background-color: #232931 !important;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
+}
+
+.carousel .item {
+  height: 500px;
+}
+
+.item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 500px;
 }
 

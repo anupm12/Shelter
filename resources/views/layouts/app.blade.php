@@ -27,8 +27,8 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content">
-            <a href="#" class="navbar-brand">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content" id="nav">
+            <a href="{{ url('/') }}" class="navbar-brand">
                 <img src="{{ asset('Images/logo.png') }} " alt="Error" class="logo">
             </a>
             <div class="icons">
@@ -63,31 +63,31 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-5">
-                        <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
+                    <li class="nav-item mx-5 link-2">
+                        <a href="{{ url('/') }}" class="mr-1 nav-link">Home</a>
                     </li>
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item mx-5">
-                        <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
+                        <a href="{{ route('login') }}" class="mr-1 link-2 nav-link">Login</a>
                         <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
                     </li>
                     <li class="nav-item mx-5">
-                        <a href="{{ route('register') }}" class="mr-1 link-2">Register</a>
+                        <a href="{{ route('register') }}" class=" nav-link mr-1 link-2">Register</a>
                         <img src="../../Images/register.png" alt="error" class="nav-img-2">
                     </li>
                     @else @if( !Auth::user()->isowner )
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('owner')}}">Become a owner</a>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link link-2" href="{{ route('owner')}}">Become a owner</a>
                     </li>
                     @else
-                    <li class="nav-item">
+                    <li class="nav-item mx-5 link-2">
                         <a class="nav-link" href="{{ route('owner')}}">Add More</a>
                     </li>
                     @endif
 
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    <li class="nav-item dropdown mx-5">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle link-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                             <span class="caret"></span>

@@ -10,7 +10,6 @@ use App\User;
 use App\owner;
 use App\welcome;
 
-
 class OwnersController extends Controller
 {
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Owner;
+use App\single;
 
 class DisplayController extends Controller
 {
@@ -20,9 +21,10 @@ class DisplayController extends Controller
 
     public function single($id)
     {
-        return view('single')->with('single' ,Owner ::find($id)) ;
+        
+        return view('single')->with('single' ,Owner ::find($id));
     }
-
+        
     public function results(){
 
         $type = request('type');
