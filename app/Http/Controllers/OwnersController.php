@@ -10,7 +10,6 @@ use App\User;
 use App\owner;
 use App\welcome;
 
-
 class OwnersController extends Controller
 {
     /**
@@ -206,7 +205,7 @@ class OwnersController extends Controller
          $owner->for = $request->for;
          $owner->description = $request->description;
          $owner->save();
-        Session::flash('success','Post Update Successfully ');
+        Session::flash('success','Advertisement Updated');
          return redirect()->route('welcome');
     }
 
