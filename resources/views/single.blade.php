@@ -4,8 +4,8 @@
 
 
 
-<div class="container">
-    <div class="row">
+<div class="container  py-5">
+    <div class="row carousel-c">
         <div class="col-md-8">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -34,15 +34,41 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <h5 class="card-header">Featured</h5>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="card card-booking text-center book">
+                <h5 class="card-header">Book Here</h5>
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-c btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Pay a token amount to book this propety.</h5>
+                    <p class="card-text">Book it through <b style="color:#eb3b5a";>Shelter</b> and get Rs.500 off.</p>
+                    <a href="#" class="btn btn-c btn-primary">Pay Now</a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="container tab-c py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Property Details</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile"
+                        aria-selected="false">About owner</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact"
+                        aria-selected="false">Contact Information</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        
         </div>
     </div>
 </div>

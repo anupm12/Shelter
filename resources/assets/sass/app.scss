@@ -4,6 +4,8 @@
 @import 'variables';
 // Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -36,7 +38,6 @@ body {
     transform-origin: top left;
     transform: skewY(5deg);
     z-index: -1;
-
 }
 
 
@@ -57,32 +58,33 @@ body {
     width: 23px;
 }
 
-#nav {
-    -webkit-animation: mymove 5s infinite;
-    /* Safari 4.0 - 8.0 */
-    animation: mymove 3s infinite;
-}
 
-/* Safari 4.0 - 8.0 */
+// #nav {
+//     -webkit-animation: mymove 5s infinite;
+//     /* Safari 4.0 - 8.0 */
+//     animation: mymove 3s infinite;
+// }
 
-@-webkit-keyframes mymove {
-    50% {
-        box-shadow: 10px 0.2px 10px $primary-color3;
-    }
-}
+// /* Safari 4.0 - 8.0 */
+// @-webkit-keyframes mymove {
+//     50% {
+//         box-shadow: 10px 0.2px 10px $primary-color3;
+//     }
+// }
 
-@keyframes mymove {
-    50% {
-        box-shadow: 10px 0.2px 10px $primary-color3;
-    }
-}
+// @keyframes mymove {
+//     50% {
+//         box-shadow: 10px 0.2px 10px $primary-color3;
+//     }
+// }
+
 
 .nav-c {
     background: #fff !important;
     font-family: Lato;
-    border-bottom: 2px solid #000;
-    // box-shadow: 10px 0.2px 10px $primary-color3;
-    // font-weight: 700;
+    border-bottom: 2px solid rgba(230, 230, 230,0.5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     text-transform: uppercase; // border-top: 3px solid rgb(235, 59, 90);
     box-shadow : a {
         color: $primary-color2 !important;
@@ -179,7 +181,6 @@ body {
 }
 
 
-
 // //HERO SECTION
 // .hero-section {
     
@@ -194,23 +195,24 @@ body {
 //             background-color: $primary-color1 !important;
 //             //   border-color: $primary-color1 !important;
 //             transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
-//         }
-    
+//         } 
 // }
+
 
 //   SEARCH form-------->>>>>>welcome page
 .btn-c {
-    background-color: $text-color !important;
+    background-color: $primary-color1 !important;
     border: 0px !important;
     border-radius: 20px !important;
 }
 
 .btn-c:hover {
     color: #fff;
-    background-color: $primary-color1 !important;
+    background-color: $text-color !important;
     //   border-color: $primary-color1 !important;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
 }
+
 
 // index page-------->>>>>>>>SRP-Search Results Page
 .card-c {
@@ -238,6 +240,7 @@ card-text-c {
     }
 }
 
+
 // owner form ----->>>UPLOAD ADVERTISEMENT
 .form-c {
     label {
@@ -247,6 +250,7 @@ card-text-c {
         padding-bottom: 5px;
     }
 }
+
 
 //VIEW PROFILE
 .table-c {
@@ -270,6 +274,10 @@ card-text-c {
 
 
 //single display
+.carousel-c {
+    padding-bottom: 30px;
+}
+
 .carousel .item {
     height: 500px;
 }
@@ -282,9 +290,23 @@ card-text-c {
 }
 
 
+//SINGLE
+.book {
+    h5 {
+        margin-bottom: 0px;
+    }
+}
 
+.card-booking {
+    width: 300px;
+    // height: 300px;
+}
 
-
-
-
-  
+.tab-c {
+    background-color: #fff;
+    color: $text-color;
+    a {
+        background-color: #fff !important;
+        color: $primary-color1;
+    }
+}
