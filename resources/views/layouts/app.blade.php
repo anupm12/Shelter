@@ -27,7 +27,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 
 </head>
@@ -37,7 +37,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content" id="nav">
                 <a href="{{ url('/') }}" class="navbar-brand">
-                    <img src="{{ asset('Images/logo.png') }} " alt="Error" class="logo">
+                    <img src="{{ asset('Images/logo1.png') }} " alt="Error" class="logo">
                 </a>
                 <div class="icons">
                     <button class="navbar-toggler icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -78,11 +78,11 @@
                         @guest
                         <li class="nav-item mx-5">
                             <a href="{{ route('login') }}" class="mr-1 link-2 nav-link">Login</a>
-                            <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
+                            <!-- <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1"> -->
                         </li>
                         <li class="nav-item mx-5">
                             <a href="{{ route('register') }}" class=" nav-link mr-1 link-2">Register</a>
-                            <img src="../../Images/register.png" alt="error" class="nav-img-2">
+                            <!-- <img src="../../Images/register.png" alt="error" class="nav-img-2"> -->
                         </li>
                         @else @if( !Auth::user()->isowner )
                         <li class="nav-item mx-5">
@@ -139,7 +139,7 @@
         </div>
         @endif
       
-        <main class="py-4 bancho">
+        <main class="py-4 bg-img">
             @yield('content')
         </main>
            
