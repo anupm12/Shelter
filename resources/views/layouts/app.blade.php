@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    
         <div id="app">
             <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content" id="nav">
                 <a href="{{ url('/') }}" class="navbar-brand">
@@ -137,11 +138,12 @@
             {{ Session::get('success') }}
         </div>
         @endif
-
-        <main class="py-4 slanted">
+      
+        <main class="py-4 bancho">
             @yield('content')
         </main>
            
+    
     </div>
 </body>
 

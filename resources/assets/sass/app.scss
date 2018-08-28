@@ -5,12 +5,23 @@
 // Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap';
 
+.bancho {
+    // background-color: #000;
+    background-image: url("/Images/b1.jpg") ; 
+    background-size: cover;
+    background-color: black !important;
+    opacity: 0.5;
+}
 
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     color: $text-color;
-    // background-image: url("/Images/back.jpg") ;
+    
+   
+    // background-size: cover;
+    // color: rgba(0,0,0,2);
+   
 }
 
 
@@ -59,24 +70,25 @@ body {
 }
 
 
-// #nav {
-//     -webkit-animation: mymove 5s infinite;
-//     /* Safari 4.0 - 8.0 */
-//     animation: mymove 3s infinite;
-// }
+#nav {
+    padding: 0px;
+    -webkit-animation: mymove 5s infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: mymove 3s infinite;
+}
 
-// /* Safari 4.0 - 8.0 */
-// @-webkit-keyframes mymove {
-//     50% {
-//         box-shadow: 10px 0.2px 10px $primary-color3;
-//     }
-// }
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    50% {
+        box-shadow: 10px 0.2px 10px $primary-color3;
+    }
+}
 
-// @keyframes mymove {
-//     50% {
-//         box-shadow: 10px 0.2px 10px $primary-color3;
-//     }
-// }
+@keyframes mymove {
+    50% {
+        box-shadow: 10px 0.2px 10px $primary-color3;
+    }
+}
 
 
 .nav-c {

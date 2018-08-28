@@ -34,7 +34,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center">
+        <!-- <div class="col-md-4 d-flex justify-content-center">
             <div class="card card-booking text-center book">
                 <h5 class="card-header">Book Here</h5>
                 <div class="card-body">
@@ -43,7 +43,22 @@
                     <a href="#" class="btn btn-c btn-primary">Pay Now</a>
                 </div>
             </div>
-        </div>
+        </div> -->
+        
+        <form action="/make-payment" method="POST">
+            {{ csrf_field() }}
+            <!-- <input type="number" name="amount" value="{{ $single -> advance }}" > -->
+            <input type="number" name="id" value=" {{ $single -> id }} ">
+        <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ config('services.stripe.key') }}"
+            data-amount=" {{ $single -> advance }} "
+            data-name="Book now"
+            data-description="Pay now to book your stay."
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="auto">
+        </script>
+        </form>
     </div>
 </div>
 <div class="container tab-c py-5">
