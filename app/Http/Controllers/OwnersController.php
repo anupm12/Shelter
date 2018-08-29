@@ -60,8 +60,6 @@ class OwnersController extends Controller
             'propertyname' => 'required|max:225|min:10',
             'rent' => 'required|max:5',
             'advance' => 'required|max:5',
-            'type' => 'required|max:25',
-            'for' => 'required|max:25',
             'description' => 'max:225'
           ]);
 
@@ -84,6 +82,23 @@ class OwnersController extends Controller
 
             $user = Auth::user();
 
+            $bhk = $request->bhk;
+            $for = $request->for;
+
+            if($bhk)
+                {
+                    $for = null;
+                }
+            else
+                $bhk = null;
+
+            if($for){
+                $bhk = null;
+            }
+            else
+                $for = null;
+
+            dd($bhk,$for);
             $owner = Owner::create([
                 'user_id' => $user->id,
                 'image1' => 'uploads/owner/'.$image1_new,
@@ -101,9 +116,10 @@ class OwnersController extends Controller
                 'rent' => $request->rent,
                 'advance' => $request->advance,
                 'type' => $request->type,
-                'for' => $request->for,
+                'for' => $for,
                 'description' => $request->description,
-                'isowner'=>true
+                'isowner'=>true,
+                'bhk' => $bhk
               ]);
 
 
@@ -190,6 +206,16 @@ class OwnersController extends Controller
         $owner->image3 = 'uploads/owner'.$image3_new;
         }
 
+        if($request->bhk)
+            $bhk = $request->bhk;
+        else
+            $bhk = null;
+
+        if($request->for)
+            $for = $request->for;
+        else
+            $for = null;
+
          $owner->firstname = $request->firstname;
          $owner->lastname = $request->lastname;
          $owner->address1 = $request->address1;
@@ -202,10 +228,11 @@ class OwnersController extends Controller
          $owner->rent = $request->rent;
          $owner->advance = $request->advance;
          $owner->type = $request->type;
-         $owner->for = $request->for;
+         $owner->for = $for;
          $owner->description = $request->description;
+         $owner->bhk = $bhk;
          $owner->save();
-        Session::flash('success','Advertisement Updated');
+         Session::flash('success','Advertisement Updated');
          return redirect()->route('welcome');
     }
 
