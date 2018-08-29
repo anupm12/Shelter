@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    
+
         <div id="app">
             <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content" id="nav">
                 <a href="{{ url('/') }}" class="navbar-brand">
@@ -105,6 +105,11 @@
                                 <a class="dropdown-item" href=" {{route('viewprofile',['id'=>Auth::user()->id]) }} ">
                                     {{ __('View profile') }}
                                 </a>
+                                @if(Auth::user()->isowner)
+                                    <a class="dropdown-item" href=" {{route('billing',['id'=>Auth::user()->id]) }} ">
+                                            {{ __('Billing') }}
+                                    </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -123,7 +128,7 @@
                 </div>
         </div>
         </nav>
-        
+
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -138,12 +143,12 @@
             {{ Session::get('success') }}
         </div>
         @endif
-      
+
         <main class="py-4 bg-img">
             @yield('content')
         </main>
-           
-    
+
+
     </div>
 </body>
 

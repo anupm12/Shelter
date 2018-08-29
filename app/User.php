@@ -32,4 +32,8 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\owner');
     }
+
+    public function charges(){
+        return $this->belongsTo('App\Charge2');
+    }
 }

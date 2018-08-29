@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-{{Session::get('country')}}
+
 
 
 <!-- <!doctype html>

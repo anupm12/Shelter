@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Owner;
 use App\single;
-
+use App\Charge2;
 class DisplayController extends Controller
 {
 
@@ -47,8 +47,14 @@ class DisplayController extends Controller
         //                     ->Where('for','like','%'.request('for').'%')->get();
         // }
 
+
         return view('results')->with('owners',$owners)->withCookie($cookie);;
 
+    }
+    public function billing(Request $request,$id){
+        $billing = Charge2::where('o_id',$id)->get();
+
+        return view('billing')->with('billing',$billing);
     }
 
 }
