@@ -132,7 +132,7 @@
 
                         <div id="ifHome" style="display:none;">
                             <label for="bhk">Select </label>
-                            <select name="bhk" id="bhk" class="form-control from-control-lg">
+                            <select name="for" id="bhk" class="form-control from-control-lg">
                                 <option value="" disabled selected hidden>Please Choose</option>
                                 <option value="1 BHk">1 BHK</option>
                                 <option value="2 BHK">2 BHK</option>

@@ -1,131 +1,28 @@
 @extends('layouts.app') @section('content')
-
+{{Session::get('country')}}
 
 
 <!-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href=" {{ asset('css/app.css') }} " />
+<section class="hero-section container py-5 my-5">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- <p style="color:#fff; ">Home </p>
+            <p style="color:#fff; ">For </p>
+            <p style="color:#eb3b5a; ">Homeless. </p> -->
 
 
-    <title>Shelter</title>
-
-
-     Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Indie+Flower|Lato:400,700" rel="stylesheet">
-
-
-</head> -->
-
-<body>
-
-
-
-
-
-
-    <!-- NAVBAR -->
-
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content ">
-        <a href="#" class="navbar-brand">
-            <img src="{{ asset('Images/logo.png') }} " alt="error" class="logo">
-        </a>
-        <div class="icons">
-            <button class="navbar-toggler icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
 
-        <script>
-            var animation = 'rubberBand';
-            $('.icon').on('click', function () {
-                $(this).toggleClass('icon--active');
-            });
-            $('.icon').on('click', function () {
-                $(this).addClass('animated ' + animation).one(
-                    'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                    function () {
-                        $(this).removeClass('animated ' + animation);
-                    });
-            });
+        <div class="col-md-4 home-form py-5">
+            <form action="{{ route('results') }}" method="GET">
+                <div class="form-group">
+                    <input name="query" type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter city">
+                </div>
 
-        </script>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                @if (Route::has('login'))
-                 <li class="nav-item mx-5">
-                    <a href="{{ url('/') }}" class="mr-5 link-2">Home</a>
-                </li> -->
-
-                <!-- @auth
-                <li class="nav-item mx-5">
-                    <a href="{{ url('admin/home') }}" class="mr-5 link-2">Home</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="{{ route('owner') }}">Become a owner</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                            <span class="caret"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @else
-                <li class="nav-item mx-5">
-                    <a href="{{ route('login') }}" class="mr-1 link-2">Login</a>
-                    <img src="{{ asset('Images/login.png') }} " alt="error" class="nav-img-1">
-                </li>
-                <li class="nav-item mx-5">
-                    <a href="{{ route('register') }}" class="mr-1 link-2">Register</a>
-                    <img src="../../Images/register.png" alt="error" class="nav-img-2">
-                </li>
-                @endauth @endif
-            </ul>
-        </div>
-    </nav> -->
-
-
-    <!-- FORM -->
-
-    <section class=" container py-5 my-5">
-        <div class="row">
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-                <form action="{{ route('results') }}" method="GET">
-                    <div class="form-group">
-                        <input name="query" type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter city">
-                    </div>
-                    <div class="form-row form-group">
+                <div class="form-row form-group">
                     <div class="col">
                         <select  onchange="yesnoCheck(this);" name="type" id="type" class="form-control from-control-lg">
 
@@ -136,33 +33,150 @@
 
                     <div class="col">
                             <div id="ifHome1" style="display:block;">
-                                    <select name="for" id="forgender" class="form-control from-control-lg">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="both">Both</option>
-                                        <option value="others">Others</option>
-                                    </select>
-                                </div>
+                            {{-- <label for="forgender">Property for</label> --}}
+                            <select name="for" id="forgender" class="form-control from-control-lg">
+                                <option value="" disabled selected hidden>Please Choose</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="both">Both</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
 
-                                <div id="ifHome" style="display:none;">
-                                    <select name="bhk" id="bhk" class="form-control from-control-lg">
-                                        <option value="1 BHk">1 BHK</option>
-                                        <option value="2 BHK">2 BHK</option>
-                                        <option value="3 BHK">3 BHK</option>
-                                        <option value="3+ BHK">3+ BHK</option>
-                                    </select>
-                                </div>
+                        <div id="ifHome" style="display:none;">
+                            {{-- <label for="bhk">Select </label> --}}
+                            <select name="for" id="bhk" class="form-control from-control-lg">
+                                <option value="" disabled selected hidden>Please Choose</option>
+                                <option value="1 BHk">1 BHK</option>
+                                <option value="2 BHK">2 BHK</option>
+                                <option value="3 BHK">3 BHK</option>
+                                <option value="3+ BHK">3+ BHK</option>
+                            </select>
+                        </div>
+
+
                     </div>
                 </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-c">Submit</button>
-                </form>
-            </div>
-            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-c">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</section>
 
+<div class="container text-center">
+    <div class="row p-5">
+        <div class="col-md-12">
+            <img src="Images/down.svg" alt="" style="height:80px ; width:100px;" onClick="document.getElementById('down-arrow').scrollIntoView();">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row pt-5" id="down-arrow-1">
+    <div class="col-md-6">
+        <p class="display-4 text-center">Looking for<br> <b class="highlight-text" style="color:rgb(185, 60, 64);"> a PG</b>
+            <br>or<b class="high-text" style="color:rgb(185, 60, 64);">
+                Home?</b></p>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+
+<div class="row" id="down-arrow-2">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+        <p class="display-4 text-center">We are here to <br> <b class="highlight-text" style="color:rgb(185, 60, 64);">Help
+                You.</p>
+    </div>
+</div>
+
+
+<div class="row details p-5 description">
+    <div class="col-md-3">
+        <h1>Everything you need.</h1>
+    </div>
+    <div class="col-md-3" style="font-family:'Lato'; ">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/Images/home.svg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Single House</h5>
+                <h6 class="card-subtitle mb-2 text-muted">For Family</h6>
+                <p class="card-text">House that suits you best.</p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="col-md-3" style="font-family:'Lato'; ">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/Images/home1.svg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Single Sharing PG</h5>
+                <h6 class="card-subtitle mb-2 text-muted">For Students/Employees</h6>
+                <p class="card-text">PG's at affordable prices</p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3" style="font-family:'Lato'; ">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/Images/home2.svg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Multiple Sharing PG</h5>
+                <h6 class="card-subtitle mb-2 text-muted">For Students/Employees</h6>
+                <p class="card-text">For those with tight budget.</p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row p-5 search-steps">
+    <div class="col-md-4">
+        <h1>Simplified Search.</h1>
+    </div>
+    <div class="col-md-4" style="font-family:'Lato'; ">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/Images/one.svg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Type in the search fields.</h5>
+                <h6 class="card-subtitle mb-2 text-muted">All the fields are required.</h6>
+                <p class="card-text">Search will be made based on these fields.</p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" style="font-family:'Lato'; ">
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/Images/two.svg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Hit Search.</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Please wait for 5 seconds.</h6>
+                <p class="card-text">Search results will be displayed.</p>
+                <!-- <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
 
 
 <script type="text/javascript">

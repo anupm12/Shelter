@@ -60,7 +60,8 @@ class OwnersController extends Controller
             'propertyname' => 'required|max:225|min:10',
             'rent' => 'required|max:5',
             'advance' => 'required|max:5',
-            'description' => 'max:225'
+            'description' => 'max:225',
+            'for'=>'required'
           ]);
 
 
@@ -82,23 +83,10 @@ class OwnersController extends Controller
 
             $user = Auth::user();
 
-            $bhk = $request->bhk;
+
             $for = $request->for;
 
-            if($bhk)
-                {
-                    $for = null;
-                }
-            else
-                $bhk = null;
 
-            if($for){
-                $bhk = null;
-            }
-            else
-                $for = null;
-
-            dd($bhk,$for);
             $owner = Owner::create([
                 'user_id' => $user->id,
                 'image1' => 'uploads/owner/'.$image1_new,
@@ -119,7 +107,7 @@ class OwnersController extends Controller
                 'for' => $for,
                 'description' => $request->description,
                 'isowner'=>true,
-                'bhk' => $bhk
+
               ]);
 
 

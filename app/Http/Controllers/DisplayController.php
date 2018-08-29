@@ -25,18 +25,29 @@ class DisplayController extends Controller
         return view('single')->with('single' ,Owner ::find($id));
     }
 
-    public function results(){
+    public function results(Request $request){
 
+        $cookie = \Cookie::forget('for');
+
+        // $cookie1 = Cookie::forget('bhk');
         $type = request('type');
-        $for  = request('for');
-        $bhk  = request('bhk');
 
-        $owners = Owner::where('city','like','%'.request('query').'%')
-                         ->Where('type','like','%'.$type.'%')
-                         ->Where('for','like','%'.$for.'%')->get();
+        // dd(request('for'),request('for'));
+            $owners = Owner::where('city','like','%'.request('query').'%')
+                            ->Where('type','like','%'.$type.'%')
+                            ->Where('for','like','%'.request('for').'%')->get();
 
 
-        return view('results')->with('owners',$owners);
+
+        $request->session()->flash('country', $request->country);
+
+        // if ($request->has('bhk')){
+        //     $owners = Owner::where('city','like','%'.request('query').'%')
+        //                     ->Where('type','like','%'.$type.'%')
+        //                     ->Where('for','like','%'.request('for').'%')->get();
+        // }
+
+        return view('results')->with('owners',$owners)->withCookie($cookie);;
 
     }
 

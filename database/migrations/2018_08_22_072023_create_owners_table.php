@@ -37,7 +37,6 @@ class CreateOwnersTable extends Migration
                 $table->string('for');
                 $table->string('description');
                 $table->boolean('isowner')->default(0);
-                $table->string('bhk');
                 $table->timestamps();
         });
 
