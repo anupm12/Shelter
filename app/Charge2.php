@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Charge2 extends Model
 {
     protected $fillable =[
-        'amount','description','currency','source','user_id','o_id','propertyname','username'
+        'amount','description','currency','source','user_id','o_id','propertyname','username','phonenumber'
     ];
 
     public function owners()

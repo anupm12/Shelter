@@ -40,6 +40,7 @@ class PaymentsController extends Controller
             'propertyname'=>$propertyname,
             'user_id'=>$user->id,
             'username'=>$user->name,
+            'phonenumber'=>$user->phonenumber,
             'source' => $token,
         ]);
         return 'Payment Success!';
