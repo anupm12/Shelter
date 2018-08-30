@@ -10485,7 +10485,7 @@ body {
 .bg-img {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 645px;
   background: url("/Images/b4.jpg") center center no-repeat;
   background-size: cover;
 }
@@ -10499,7 +10499,7 @@ body {
   left: 0;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#283048), to(#859398));
   background-image: linear-gradient(to bottom right, #283048, #859398);
-  opacity: .5;
+  opacity: .7;
   filter: alpha(opacity=40);
   /* For IE8 and earlier */
 }
@@ -10650,7 +10650,7 @@ body {
 #down-arrow-1 {
   overflow-x: hidden;
   height: 300px !important;
-  background-color: #fff;
+  background-color: #ededed;
 }
 
 #down-arrow-2 {
@@ -10659,31 +10659,52 @@ body {
   background-color: #fff;
 }
 
+#down-arrow-2 p {
+  height: 100%;
+}
+
+.left {
+  border-left: 4px dotted #b93c40;
+}
+
 .highlight-text {
   font-family: "Righteous";
 }
 
-.details {
-  background-color: #fff;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#8e9eab), to(#eef2f3));
-  background-image: linear-gradient(to bottom right, #8e9eab, #eef2f3);
-}
-
 .description,
 .search-steps {
-  background-color: #fff;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#fff));
-  background-image: linear-gradient(to bottom right, #fff, #fff);
+  background-color: #ededed;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#eef2f3), to(#ffffff));
+  background-image: linear-gradient(to bottom right, #eef2f3, #ffffff);
   color: #232931;
 }
 
-.description img,
-.search-steps img {
+.description .card,
+.search-steps .card {
+  border: none !important;
+}
+
+.description .card img,
+.search-steps .card img {
   width: 100px;
   height: 100px;
   padding: 10px;
   -ms-flex-item-align: center;
       align-self: center;
+}
+
+.search-steps {
+  background-color: #fff !important;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#fff)) !important;
+  background-image: linear-gradient(to bottom right, #fff, #fff) !important;
+}
+
+.are-you {
+  background-color: #ededed;
+}
+
+.are-you h1 {
+  color: #232931;
 }
 
 .card-c {
