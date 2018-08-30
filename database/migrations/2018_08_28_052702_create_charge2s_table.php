@@ -22,6 +22,7 @@ class CreateCharge2sTable extends Migration
             $table->string('description');
             $table->string('source');
             $table->string('propertyname');
+            $table->string('phonenumber');
             $table->string('username');
             $table->timestamps();
         });

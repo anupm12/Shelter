@@ -111,9 +111,8 @@ class OwnersController extends Controller
               ]);
 
 
-              $id = $user->id;
-              $owner = Owner::find($id);
-              $user->isowner = $owner->isowner;
+
+              $user->isowner = true;
               $user->save();
 
 

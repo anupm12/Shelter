@@ -27,6 +27,7 @@
                 <thead>
                     <tr>
                         <th scope="col">User Name</th>
+                        <th scope="col">Phone Number</th>
                         <th scope="col">Property name</th>
                         <th scope="col">Amount</th>
                     </tr>
@@ -35,6 +36,7 @@
                 @if(Auth::user()->isowner) @foreach($billing as $bill)
                     <tr>
                         <td>{{ ucfirst($bill -> username) }}</td>
+                        <td>{{ $bill -> phonenumber }}</td>
                         <td>{{ ucfirst($bill -> propertyname) }}</td>
                         <td>{{ $bill -> amount }}</td>
                     </tr>
