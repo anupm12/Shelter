@@ -44,11 +44,11 @@
                 </div>
             </div>
         </div> -->
-        
-        <form action="/make-payment" method="POST">
+
+        <form action="{{ route('make-payment',['id'=>$single -> id,'o_id'=>$single-> user_id]) }}" method="POST">
             {{ csrf_field() }}
-            <!-- <input type="number" name="amount" value="{{ $single -> advance }}" > -->
-            <input type="number" name="id" value=" {{ $single -> id }} ">
+            <input type="number" name="amount" value="{{ $single -> advance }}"  style="display:none">
+
         <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="{{ config('services.stripe.key') }}"
@@ -76,14 +76,14 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                  
+
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
             </div>
         </div>
         <div class="col-md-4">
-        
+
         </div>
     </div>
 </div>

@@ -108,10 +108,10 @@
                     <input name="advance" type="text" class="form-control from-control-lg" id="advance" placeholder="Only in numbers">
                 </div>
 
-                <div class="form-row form-group">
+                    <div class="form-row form-group">
                     <div class="col">
                         <label for="type">Property type</label>
-                        <select name="type" id="type" class="form-control from-control-lg" placeholder="Select property type">
+                        <select  onchange="yesnoCheck(this);" name="type" id="type" class="form-control from-control-lg" placeholder="Select property type">
                             <option value="" disabled selected hidden>Please Choose</option>
                             <option value="pg">PG</option>
                             <option value="home">Home</option>
@@ -119,14 +119,27 @@
                     </div>
 
                     <div class="col">
-                        <label for="forgender">Property for</label>
-                        <select name="for" id="forgender" class="form-control from-control-lg">
-                            <option value="" disabled selected hidden>Please Choose</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="both">Both</option>
-                            <option value="others">Others</option>
-                        </select>
+                        <div id="ifHome1" style="display:block;">
+                            <label for="forgender">Property for</label>
+                            <select name="for" id="forgender" class="form-control from-control-lg">
+                                <option value="" disabled selected hidden>Please Choose</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="both">Both</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+
+                        <div id="ifHome" style="display:none;">
+                            <label for="bhk">Select </label>
+                            <select name="for" id="bhk" class="form-control from-control-lg">
+                                <option value="" disabled selected hidden>Please Choose</option>
+                                <option value="1 BHk">1 BHK</option>
+                                <option value="2 BHK">2 BHK</option>
+                                <option value="3 BHK">3 BHK</option>
+                                <option value="3+ BHK">3+ BHK</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -138,7 +151,7 @@
                 <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Submit</button>
             </form>
         </div>
-
+    </div>
 
         <div class="col-md-2">
         </div>
@@ -170,6 +183,19 @@
     }
 
     initialize();
+
+
+    function yesnoCheck(that) {
+        if (that.value == "home") {
+            document.getElementById("ifHome").style.display = "block";
+            document.getElementById("ifHome1").style.display = "none";
+
+        } else {
+            document.getElementById("ifHome").style.display = "none";
+            document.getElementById("ifHome1").style.display = "block";
+        }
+    }
+
 
 </script>
 

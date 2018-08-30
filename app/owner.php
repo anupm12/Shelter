@@ -18,4 +18,9 @@ class Owner extends Model
     {
        return $this->belongsTo('App\User');
     }
+
+    public function charges()
+    {
+        return $this->belongsTo('App\Charge2');
+    }
 }

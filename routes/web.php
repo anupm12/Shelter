@@ -65,9 +65,14 @@ Route::group(['prefix' => 'admin','middleware' => 'web','middleware' => 'auth'],
         'as' => 'editadvertisement.update'
     ]);
 
-    Route::get('/viewprofile{id}', [
+    Route::get('/viewprofile/{id}', [
         'uses' => 'ViewprofileController@index',
         'as' => 'viewprofile'
+    ]);
+
+    Route::get('/billing/{id}',[
+        'uses'=>'DisplayController@billing',
+        'as'=>'billing'
     ]);
 
     Route::get('owner/delete/{id}',[
@@ -81,5 +86,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::post('/make-payment', 'PaymentsController@pay');
+Route::post('/make-payment/{id}/{o_id}', [
+    'uses'=>'PaymentsController@pay',
+    'as'=>'make-payment'
+]);
 
