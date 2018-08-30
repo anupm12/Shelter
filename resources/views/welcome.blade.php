@@ -1,19 +1,7 @@
 @extends('layouts.app') @section('content')
 
 
-
-<!-- <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-
-<section class="hero-section container py-5 my-5">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- <p style="color:#fff; ">Home </p>
-            <p style="color:#fff; ">For </p>
-            <p style="color:#eb3b5a; ">Homeless. </p> -->
-
-
-        </div>
+       
 
         <div class="col-md-4 home-form py-5">
             <form action="{{ route('results') }}" method="GET">
@@ -195,19 +183,6 @@
         }
     }
 </script>
-
-<!--  </body> -->
-
-
-
-
-
-
-
-
-
-
-<!-- </html> -->
 
 
 
