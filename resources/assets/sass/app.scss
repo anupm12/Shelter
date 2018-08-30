@@ -19,7 +19,7 @@ html, body {
   .bg-img {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 645px;
     background: url("/Images/b4.jpg") center center no-repeat;
     background-size: cover;
     
@@ -31,7 +31,7 @@ html, body {
       bottom: 0;
       left: 0;
       background-image: linear-gradient(to bottom right,#283048,#859398); //#dc4225
-      opacity: .5; 
+      opacity: .7; 
       filter: alpha(opacity=40); /* For IE8 and earlier */
     }
   }
@@ -223,38 +223,55 @@ html, body {
     overflow-x :hidden;
     height: 300px !important;
     // width: max-width !important;
-    background-color:#fff;   
+    background-color:#ededed;   
 }
 
 #down-arrow-2 {
     overflow-x :hidden;
     height: 250px !important;
     // width: max-width !important;
-    background-color:#fff;   
+    background-color:#fff;  
+    p {
+        height: 100%;
+    }
+}
+.left {
+    border-left: 4px dotted $primary-color1;
 }
 
 .highlight-text {
     font-family: "Righteous";
 }
 
-.details {
-    background-color: #fff;
-    background-image: linear-gradient(to bottom right,#8e9eab,#eef2f3); 
+
+.description , .search-steps {
+    background-color: #ededed;
+    // background-image: linear-gradient(to bottom right,#fff,#fff); 
+    background-image: linear-gradient(to bottom right,#eef2f3,#ffffff); 
+    color: $text-color;
+    .card {
+        border:none !important;
+        img {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            align-self: center;
+        }
+    }
     
 }
 
-.description , .search-steps {
-    background-color: #fff;
-    background-image: linear-gradient(to bottom right,#fff,#fff); 
-    color: $text-color;
-    img {
-        width: 100px;
-        height: 100px;
-        padding: 10px;
-        align-self: center;
-    }
+.search-steps {
+    background-color: #fff !important;
+    background-image: linear-gradient(to bottom right,#fff,#fff) !important; 
 }
 
+.are-you {
+    background-color: #ededed;
+    h1 {
+        color: $text-color;
+    }
+}
 
 
 // results page-------->>>>>>>>SRP-Search Results Page
