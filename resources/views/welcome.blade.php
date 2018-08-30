@@ -1,56 +1,58 @@
 @extends('layouts.app') @section('content')
 
 
-       
+<div class="row pt-5">
+    <div class="col-md-4">
+    </div>
 
-        <div class="col-md-4 home-form py-5">
-            <form action="{{ route('results') }}" method="GET">
-                <div class="form-group">
-                    <input name="query" type="text" class="form-control form-control-lg" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter city">
+    <div class="col-md-4 home-form py-5">
+        <form action="{{ route('results') }}" method="GET">
+            <div class="form-group">
+                <input name="query" type="text" class="form-control form-control-lg" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter city">
+            </div>
+
+            <div class="form-row form-group">
+                <div class="col">
+                    <select onchange="yesnoCheck(this);" name="type" id="type" class="form-control from-control-lg">
+
+                        <option value="pg">PG</option>
+                        <option value="home">Home</option>
+                    </select>
                 </div>
 
-                <div class="form-row form-group">
-                    <div class="col">
-                        <select  onchange="yesnoCheck(this);" name="type" id="type" class="form-control from-control-lg">
-
-                            <option value="pg">PG</option>
-                            <option value="home">Home</option>
+                <div class="col">
+                    <div id="ifHome1" style="display:block;">
+                        {{-- <label for="forgender">Property for</label> --}}
+                        <select name="for" id="forgender" class="form-control from-control-lg">
+                            <option value="" disabled selected hidden>Please Choose</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="both">Both</option>
+                            <option value="others">Others</option>
                         </select>
                     </div>
 
-                    <div class="col">
-                            <div id="ifHome1" style="display:block;">
-                            {{-- <label for="forgender">Property for</label> --}}
-                            <select name="for" id="forgender" class="form-control from-control-lg">
-                                <option value="" disabled selected hidden>Please Choose</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="both">Both</option>
-                                <option value="others">Others</option>
-                            </select>
-                        </div>
-
-                        <div id="ifHome" style="display:none;">
-                            {{-- <label for="bhk">Select </label> --}}
-                            <select name="for" id="bhk" class="form-control from-control-lg">
-                                <option value="" disabled selected hidden>Please Choose</option>
-                                <option value="1 BHk">1 BHK</option>
-                                <option value="2 BHK">2 BHK</option>
-                                <option value="3 BHK">3 BHK</option>
-                                <option value="3+ BHK">3+ BHK</option>
-                            </select>
-                        </div>
-
-
+                    <div id="ifHome" style="display:none;">
+                        {{-- <label for="bhk">Select </label> --}}
+                        <select name="for" id="bhk" class="form-control from-control-lg">
+                            <option value="" disabled selected hidden>Please Choose</option>
+                            <option value="1 BHk">1 BHK</option>
+                            <option value="2 BHK">2 BHK</option>
+                            <option value="3 BHK">3 BHK</option>
+                            <option value="3+ BHK">3+ BHK</option>
+                        </select>
                     </div>
-                </div>
 
-                <button type="submit" class="btn btn-primary btn-lg btn-c">Submit</button>
-            </form>
-        </div>
-        <div class="col-md-4"></div>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-c">Submit</button>
+        </form>
     </div>
+    <div class="col-md-4"></div>
+</div>
 </section>
 
 <div class="container text-center">
@@ -167,6 +169,76 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="p-4">Get in touch</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+
+            <img src="/Images/contact.jpg" alt="" class="contact-image">
+        </div>
+        <div class="col-md-4 contact py-5">
+            <form>
+                <div class="form-group">
+                    <label for="firstname">First name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last name</label>
+                    <input type="password" class="form-control" id="lastname" placeholder="Your last name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-c">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row social text-center">
+    <div class="col-md-12">
+        <ul>
+            <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="" target="_blank"><i class=""><i class="fa fa-instagram icon-4x" aria-hidden="true"></i></a></li>
+            <li><a href="" target="_blank"><i class=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            <li><a href="" target="_blank"><i class=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="" target="_blank"><i class=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="" target="_blank"><i class=""><i class="fa fa-linkedin" aria-hidden="true"></i></i></a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="foot-container row">
+    <div class="col-md-6">
+        <ul class="foot-nav">
+            <li><a href="#">home</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-6">
+        <p>Designed and developed by Anupam Shukla.</p>
+    </div>
+</div>
+
+
+
 
 
 
@@ -182,6 +254,7 @@
             document.getElementById("ifHome1").style.display = "block";
         }
     }
+
 </script>
 
 

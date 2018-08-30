@@ -5,37 +5,37 @@
 // Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap';
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     font-family: 'Lato', sans-serif;
-    font-weight: 350;
+    font-weight: 400;
     color: $text-color;
     max-width: 100%;
     overflow-x: hidden;
-  }
-  
+}
 
-  .bg-img {
+.bg-img {
     position: relative;
     width: 100%;
-    height: 645px;
+    height: 603px;
     background: url("/Images/b4.jpg") center center no-repeat;
     background-size: cover;
-    
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to bottom right,#283048,#859398); //#dc4225
-      opacity: .7; 
-      filter: alpha(opacity=40); /* For IE8 and earlier */
-    }
-  }
 
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right, #283048, #859398); //#dc4225
+        opacity: .7;
+        filter: alpha(opacity=40);
+        /* For IE8 and earlier */
+    }
+}
 
 // //SLANTED LINE
 // .slanted {
@@ -45,9 +45,7 @@ html, body {
 //     background: #fff;
 //     padding: 30px;
 //     margin-bottom: 100px;
-
 // }
-
 // .slanted:after {
 //     position: absolute;
 //     content: '';
@@ -62,8 +60,6 @@ html, body {
 //     transform: skewY(5deg);
 //     z-index: -1;
 // }
-
-
 //  NAVBAR 
 .logo {
     height: 55px;
@@ -75,13 +71,10 @@ html, body {
 //     height: 20px;
 //     width: 30px;
 // }
-
 // .nav-img-2 {
 //     height: 20px;
 //     width: 23px;
 // }
-
-
 #nav {
     padding: 0px;
     -webkit-animation: mymove 5s infinite;
@@ -102,18 +95,21 @@ html, body {
     }
 }
 
-
 .nav-c {
     background: #FAFAFA !important;
     font-family: Lato;
-    border-bottom: 2px solid rgba(235, 59, 90,0.5);
-    -webkit-background-clip: padding-box; /* for Safari */
-    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    border-bottom: 2px solid rgba(235, 59, 90, 0.5);
+    -webkit-background-clip: padding-box;
+    /* for Safari */
+    background-clip: padding-box;
+    /* for IE9+, Firefox 4+, Opera, Chrome */
     text-transform: uppercase; // border-top: 3px solid rgb(235, 59, 90);
+
     box-shadow : a {
         color: $primary-color2 !important;
         text-decoration: none;
     }
+
     ul {
         a {
             color: $primary-color2 !important;
@@ -204,7 +200,6 @@ html, body {
     transform: scale(1.05);
 }
 
-
 //   SEARCH form-------->>>>>>welcome page
 .btn-c {
     background-color: $primary-color1 !important;
@@ -220,21 +215,23 @@ html, body {
 }
 
 #down-arrow-1 {
-    overflow-x :hidden;
+    overflow-x: hidden;
     height: 300px !important;
     // width: max-width !important;
-    background-color:#ededed;   
+    background-color: #ededed;
 }
 
 #down-arrow-2 {
-    overflow-x :hidden;
+    overflow-x: hidden;
     height: 250px !important;
     // width: max-width !important;
-    background-color:#fff;  
+    background-color: #fff;
+
     p {
         height: 100%;
     }
 }
+
 .left {
     border-left: 4px dotted $primary-color1;
 }
@@ -243,14 +240,18 @@ html, body {
     font-family: "Righteous";
 }
 
-
-.description , .search-steps {
+.description,
+.search-steps {
+    display: flex;
+    align-items: center;
     background-color: #ededed;
     // background-image: linear-gradient(to bottom right,#fff,#fff); 
-    background-image: linear-gradient(to bottom right,#eef2f3,#ffffff); 
+    background-image: linear-gradient(to bottom right, #eef2f3, #ffffff);
     color: $text-color;
+
     .card {
-        border:none !important;
+        border: none !important;
+
         img {
             width: 100px;
             height: 100px;
@@ -258,21 +259,80 @@ html, body {
             align-self: center;
         }
     }
-    
 }
 
 .search-steps {
     background-color: #fff !important;
-    background-image: linear-gradient(to bottom right,#fff,#fff) !important; 
+    background-image: linear-gradient(to bottom right, #fff, #fff) !important;
 }
 
 .are-you {
     background-color: #ededed;
+
     h1 {
         color: $text-color;
     }
 }
 
+.contact {
+    color: $text-color;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.contact-image {
+    // max-width: 680px;
+    // max-height: 830px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.social {
+    background-color: $primary-color2;
+    list-style: none;
+    width: 100%;
+}
+
+.social ul {
+    align-content: center;
+}
+.social li {
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.social-media li a i {
+    font-size: 200px;
+}
+
+.social li a:link,
+.social li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    padding-bottom: 1px;
+    transition: all 0.5s ease;
+}
+
+.social li a:hover,
+.social li a:active {
+    padding: 10px;
+    font-size: 120%;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+  
+  .foot-container{
+    background-color: $text-color;
+    font-family: 'Lato';
+    margin:20px 20px 0 20px; 
+    text-transform: capitalize;
+  }
+  
 
 // results page-------->>>>>>>>SRP-Search Results Page
 .card-c {
@@ -296,22 +356,23 @@ html, body {
     }
 }
 
-
 // owner form ----->>>UPLOAD ADVERTISEMENT
 .form-c {
     label {
         color: $primary-color2;
     }
+
     input [type=file] {
         padding-bottom: 5px;
     }
 }
 
-
 //VIEW PROFILE
 .table-c {
-    td,th {
-        text-align: center;  
+
+    td,
+    th {
+        text-align: center;
     }
 }
 
@@ -327,7 +388,6 @@ html, body {
     background-color: $primary-color1 !important; //   border-color: $primary-color1 !important;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
 }
-
 
 //single display
 .carousel-c {
@@ -345,7 +405,6 @@ html, body {
     max-height: 500px;
 }
 
-
 //SINGLE
 .book {
     h5 {
@@ -361,6 +420,7 @@ html, body {
 .tab-c {
     background-color: #fff;
     color: $text-color;
+
     a {
         background-color: #fff !important;
         color: $primary-color1;

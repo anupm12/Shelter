@@ -10476,7 +10476,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Lato', sans-serif;
-  font-weight: 350;
+  font-weight: 400;
   color: #232931;
   max-width: 100%;
   overflow-x: hidden;
@@ -10485,7 +10485,7 @@ body {
 .bg-img {
   position: relative;
   width: 100%;
-  height: 645px;
+  height: 603px;
   background: url("/Images/b4.jpg") center center no-repeat;
   background-size: cover;
 }
@@ -10673,6 +10673,12 @@ body {
 
 .description,
 .search-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #ededed;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#eef2f3), to(#ffffff));
   background-image: linear-gradient(to bottom right, #eef2f3, #ffffff);
@@ -10705,6 +10711,63 @@ body {
 
 .are-you h1 {
   color: #232931;
+}
+
+.contact {
+  color: #232931;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.contact-image {
+  height: 100%;
+  width: 100%;
+}
+
+.social {
+  background-color: #393E46;
+  list-style: none;
+  width: 100%;
+}
+
+.social ul {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.social li {
+  display: inline-block;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.social-media li a i {
+  font-size: 200px;
+}
+
+.social li a:link,
+.social li a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  padding-bottom: 1px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.social li a:hover,
+.social li a:active {
+  padding: 10px;
+  font-size: 120%;
+  color: #fff;
+  padding-bottom: 5px;
+}
+
+.foot-container {
+  background-color: #232931;
+  font-family: 'Lato';
+  margin: 20px 20px 0 20px;
+  text-transform: capitalize;
 }
 
 .card-c {
