@@ -357,9 +357,20 @@ body {
 }
 
 // owner form ----->>>UPLOAD ADVERTISEMENT
+// .owner-form {
+//     background-color: #fff !important;
+//     background-image: none !important;
+// }
+
 .form-c {
+    
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #fff;
+    border-radius: 10px;
     label {
         color: $primary-color2;
+        
     }
 
     input [type=file] {
@@ -369,7 +380,7 @@ body {
 
 //VIEW PROFILE
 .table-c {
-
+   
     td,
     th {
         text-align: center;
@@ -388,6 +399,23 @@ body {
     background-color: $primary-color1 !important; //   border-color: $primary-color1 !important;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
 }
+
+// .user-details {
+//     color: $text-color;
+//     background-color: #fff;
+//     padding: 30px;
+//     border: 2px solid #fff;
+//     border-radius: 10px;
+// }
+
+.full {
+    background-color: #fff !important;
+    color:$text-color !important;
+    // padding: 30px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
 
 //single display
 .carousel-c {
@@ -426,3 +454,10 @@ body {
         color: $primary-color1;
     }
 }
+
+
+
+.file {
+    visibility: hidden;
+    position: absolute;
+  }

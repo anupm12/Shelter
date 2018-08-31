@@ -10786,6 +10786,13 @@ body {
   width: 15px !important;
 }
 
+.form-c {
+  background-color: #fff;
+  padding: 30px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
 .form-c label {
   color: #393E46;
 }
@@ -10810,6 +10817,13 @@ body {
   color: #fff !important;
   background-color: #b93c40 !important;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
+}
+
+.full {
+  background-color: #fff !important;
+  color: #232931 !important;
+  border: 2px solid #fff;
+  border-radius: 10px;
 }
 
 .carousel-c {
@@ -10843,5 +10857,10 @@ body {
 .tab-c a {
   background-color: #fff !important;
   color: #b93c40;
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
 }
 

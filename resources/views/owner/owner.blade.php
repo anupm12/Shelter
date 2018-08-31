@@ -1,7 +1,7 @@
 @extends('layouts.app') @section('content')
 
 
-<section class="container py-5 my-5">
+<section class="container py-5 my-5 owner-form">
     <div class="row">
 
 
@@ -45,21 +45,55 @@
                     </div>
                 </div> -->
 
+        <div class="form-group">
+    <input type="file" name="image1" class="file" id="image1" >
+    <div class="input-group col-xs-12">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+      <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+      <span class="input-group-btn">
+        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+      </span>
+    </div>
+  </div>
 
-                <div class="form-group">
+   <div class="form-group">
+    <input type="file" name="image2" class="file" id="image2" >
+    <div class="input-group col-xs-12">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+      <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+      <span class="input-group-btn">
+        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+      </span>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <input type="file" name="image3" class="file" id="image3" >
+    <div class="input-group col-xs-12">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+      <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+      <span class="input-group-btn">
+        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+      </span>
+    </div>
+  </div>
+
+
+
+                <!-- <div class="form-group input-group">
                     <label for="image1">Add image</label>
                     <input type="file" class="form-control" id="image1" name="image1">
-                </div>
+                </div> -->
 
-                <div class="form-group">
+                <!-- <div class="form-group input-group">
                     <label for="image2">Add image</label>
-                    <input type="file" class="form-control" id="image2" name="image2">
+                    <input type="file" class="input-group-button" id="image2" name="image2">
                 </div>
 
                 <div class="form-group">
                     <label for="image3">Add image</label>
                     <input type="file" class="form-control" id="image3" name="image3">
-                </div>
+                </div> -->
 
                 <div class="form-group py-3">
                     <label for="inputAddress">Address line 1</label>
@@ -89,7 +123,7 @@
 
                     <div class="form-group col-md-2">
                         <label for="inputZip">Zip</label>
-                        <input name="zip" type="text" class="form-control from-control-lg" id="inputZip" placeholder="Enter zip code">
+                        <input name="zip" type="text" class="form-control from-control-lg" id="inputZip" placeholder="Zip code">
                     </div>
                 </div>
 
@@ -173,8 +207,10 @@
 
         for (var i = 0; i < acInputs.length; i++) {
 
+           
             var autocomplete = new google.maps.places.Autocomplete(acInputs[i]);
             autocomplete.inputId = acInputs[i].id;
+            
 
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 document.getElementById("log").innerHTML = 'You used input with id ' + this.inputId;

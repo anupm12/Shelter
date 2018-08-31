@@ -39,7 +39,7 @@
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content fixed-top " id="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-c fill content" id="nav">
             <a href="{{ url('/') }}" class="navbar-brand">
                 <img src="{{ asset('Images/logo1.png') }} " alt="Error" class="logo">
             </a>
@@ -150,7 +150,7 @@
     </div>
     @endif
 
-    <main class="py-4 bg-img">
+    <main class="bg-img">
         @yield('content')
     </main>
 
