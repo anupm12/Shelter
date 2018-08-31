@@ -193,15 +193,7 @@ class OwnersController extends Controller
         $owner->image3 = 'uploads/owner'.$image3_new;
         }
 
-        if($request->bhk)
-            $bhk = $request->bhk;
-        else
-            $bhk = null;
-
-        if($request->for)
-            $for = $request->for;
-        else
-            $for = null;
+        $for = $request->for;
 
          $owner->firstname = $request->firstname;
          $owner->lastname = $request->lastname;
@@ -217,7 +209,7 @@ class OwnersController extends Controller
          $owner->type = $request->type;
          $owner->for = $for;
          $owner->description = $request->description;
-         $owner->bhk = $bhk;
+
          $owner->save();
          Session::flash('success','Advertisement Updated');
          return redirect()->route('welcome');
