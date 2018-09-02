@@ -232,7 +232,7 @@
         </ul>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 footer">
         <p>Designed and developed by Anupam Shukla.</p>
     </div>
 </div>

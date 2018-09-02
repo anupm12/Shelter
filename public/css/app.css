@@ -10770,6 +10770,10 @@ body {
   text-transform: capitalize;
 }
 
+.footer {
+  font-family: 'Lato';
+}
+
 .card-c {
   width: img;
   width-height: 10rem !important;
@@ -10819,9 +10823,9 @@ body {
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.6s ease-in-out, -webkit-box-shadow 0.6s ease-in-out;
 }
 
-.full {
+.full1 {
   background-color: #fff !important;
-  color: #232931 !important;
+  color: #fff !important;
   border: 2px solid #fff;
   border-radius: 10px;
 }
@@ -10839,6 +10843,11 @@ body {
   top: 0;
   left: 0;
   max-height: 500px;
+}
+
+.book {
+  height: 200px;
+  width: 200px;
 }
 
 .book h5 {

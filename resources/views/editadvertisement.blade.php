@@ -29,7 +29,45 @@
                     </div>
                 </div>
 
+
                 <div class="form-group">
+                    <input type="file" name="image1" class="file" id="image1">
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                        <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                        <span class="input-group-btn">
+                            <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i>
+                                Browse</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" name="image2" class="file" id="image2">
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                        <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                        <span class="input-group-btn">
+                            <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i>
+                                Browse</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" name="image3" class="file" id="image3">
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                        <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                        <span class="input-group-btn">
+                            <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i>
+                                Browse</button>
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- <div class="form-group">
                     <label for="image1">Add image</label>
                     <input type="file" class="form-control" id="image1" name="image1">
                 </div>
@@ -42,7 +80,7 @@
                 <div class="form-group">
                     <label for="image3">Add image</label>
                     <input type="file" class="form-control" id="image3" name="image3">
-                </div>
+                </div> -->
 
                 <div class="form-group py-3">
                     <label for="inputAddress">Address line 1</label>
@@ -144,7 +182,7 @@
                         rows="7"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Update profile</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-c align-center">Update add</button>
             </form>
         </div>
 
@@ -178,6 +216,21 @@
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 document.getElementById("log").innerHTML = 'You used input with id ' + this.inputId;
             });
+        }
+    }
+
+
+
+
+
+    function yesnoCheck(that) {
+        if (that.value == "home") {
+            document.getElementById("ifHome").style.display = "block";
+            document.getElementById("ifHome1").style.display = "none";
+
+        } else {
+            document.getElementById("ifHome").style.display = "none";
+            document.getElementById("ifHome1").style.display = "block";
         }
     }
 

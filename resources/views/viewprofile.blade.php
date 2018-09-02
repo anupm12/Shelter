@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 
-<div class="container full">
+<div class="container full1">
     <!-- <img src="..." class="rounded float-right" alt="..."> -->
 
     <div class="row user-details">

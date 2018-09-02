@@ -332,6 +332,10 @@ body {
     margin:20px 20px 0 20px; 
     text-transform: capitalize;
   }
+
+  .footer {
+      font-family: 'Lato';
+  }
   
 
 // results page-------->>>>>>>>SRP-Search Results Page
@@ -408,9 +412,9 @@ body {
 //     border-radius: 10px;
 // }
 
-.full {
+.full1 {
     background-color: #fff !important;
-    color:$text-color !important;
+    color:#fff !important;
     // padding: 30px;
     border: 2px solid #fff;
     border-radius: 10px;
@@ -435,6 +439,8 @@ body {
 
 //SINGLE
 .book {
+    height: 200px;
+    width: 200px;
     h5 {
         margin-bottom: 0px;
     }
